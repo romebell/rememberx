@@ -1,0 +1,32 @@
+{
+  "name": "remembrrr",
+  "version": "1.0.0",
+  "description": "Space Repetition App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(git://github.com/romebell/remembrrr.git)"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Rome Bell, Ahmed Ali, Kyle Fischer",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.18",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
