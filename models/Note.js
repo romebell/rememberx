@@ -23,8 +23,8 @@ const NoteSchema = new Schema({
     default: 0
   },
   userId: {
-    type: Number,
-    required: true
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   },
   collectionIds: {
     type: []
