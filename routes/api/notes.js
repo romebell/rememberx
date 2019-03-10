@@ -27,25 +27,45 @@ router.post('/',
 
 });
 
-router.delete('/',
+// router.delete('/',
   // passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  // (req, res) => {
 
-    Note.findOneAndDelete({
+    // Note.findOneAndDelete({
     // Note.findOneAndRemove({
-      id: req.body.id,
-    })
-    // }).then((note) => {
-    //   if (!note) {
-    //     return res.status(404).send();
-    //   }
-    //   res.send({
-    //     note
-    //   });
-    // }).catch(e => {
-    //   res.status(400).send();
-    // });
-});
+//       id: req.body.id,
+//     }).then((note) => {
+//       if (!note) {
+//         return res.status(404).send();
+//       }
+//       res.send({
+//         note
+//       });
+//     }).catch(e => {
+//       res.status(400).send();
+//     });
+// });
+
+
+router.delete('/',
+  (req, res) => {
+    Note.findById(req.body.id)
+      .then(note => {
+        noteOwner = User.findById(note.userId);
+        // if (noteOwner.id === req.user.id) {
+          note.remove().then(res.json(note));
+        // } else {
+        //   res.status(403).json({ incorrectPermission: "You cannot delete this note" })
+        // }
+      })
+    .catch(error =>
+      res.status(404).json({ noNoteFound: "Note not found" }))
+  });
+
+
+
+
+
 
 //   User.findOne({ email: req.body.email })
 //   .then(user => {
