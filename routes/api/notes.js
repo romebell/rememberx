@@ -8,7 +8,6 @@ const validateNoteInput = require('../../validation/notes');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
 
-// router.post('/', (req, res) =>)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -26,6 +25,26 @@ router.post('/',
 
   newNote.save().then(note => res.json(note));
 
+});
+
+router.delete('/',
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+
+    Note.findOneAndDelete({
+    // Note.findOneAndRemove({
+      id: req.body.id,
+    })
+    // }).then((note) => {
+    //   if (!note) {
+    //     return res.status(404).send();
+    //   }
+    //   res.send({
+    //     note
+    //   });
+    // }).catch(e => {
+    //   res.status(400).send();
+    // });
 });
 
 //   User.findOne({ email: req.body.email })
