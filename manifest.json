@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Remembrrr",
+  "description": "Spaced Repetition App",
+  "version": "1.0.0",
+  "icons": {"128": "approve_like_thumb_icon_128.png"},
+  "browser_action": {
+    "default_icon": "approve_like_thumb_icon_16.png",
+    "default_popup": "../frontend/public/index.html"
+  },
+  "permissions": ["activeTab"],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
+ 
+}
+
