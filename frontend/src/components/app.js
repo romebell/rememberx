@@ -1,21 +1,29 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
 import Modal from './modal/modal';
 import GreetingContainer from '../greeting/greeting_container';
 import NavBarContainer from './nav/navbar_container';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import MainPage from './main/main_page';
 
-import './App.scss'
+import NoteIndexContainer from './note/note_index_container';
+import NoteShowContainer from './note/note_show_container';
+import NoteFormContainer from './note/note_form_container';
+
+import './App.scss';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Modal />
     <NavBarContainer />
     <GreetingContainer />
     <Switch>
-        <AuthRoute exact path="/" component={MainPage} />
+        <Route exact path="/" component={MainPage} />
+        <ProtectedRoute exact path="/notes" component={NoteIndexContainer} />
+        <ProtectedRoute exact path="/notes/new" component={NoteFormContainer} />
+        <ProtectedRoute exact path="/notes/:noteId" component={NoteShowContainer} />
+        <Redirect from="*" to="/" />
     </Switch>
   </div>
 );

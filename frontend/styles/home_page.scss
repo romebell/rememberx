@@ -1,0 +1,28 @@
+
+body {
+    background-color: lightgrey;
+}
+
+.app {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    background-color: lightblue;
+
+    .navbar {
+        display: grid;
+        grid-template-columns: 2fr 5fr 3fr;
+        background-color: pink;
+
+        .logo {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .navbar-links {
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+
+    }
+}
