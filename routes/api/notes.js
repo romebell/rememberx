@@ -44,9 +44,9 @@ router.post('/',
 
 });
 
-router.delete('/',
+router.delete('/:id',
   (req, res) => {
-    Note.findById(req.body.id)
+    Note.findById(req.params.id)
       .then(note => {
         noteOwner = User.findById(note.userId);
         // if (noteOwner.id === req.user.id) {
@@ -64,9 +64,9 @@ router.delete('/',
       Note.findById(req.params.id)
         .then(note => {
           const newNote = new Note({
-            question: req.body.question,
-            answer: req.body.answer,
-            userId: req.user.id,
+            question: req.body.question || note.question,
+            answer: req.body.answer || note.answer,
+            userId: note.userId,
             id: req.params.id
           });
           // noteOwner = User.findById(note.userId);
