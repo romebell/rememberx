@@ -10,8 +10,10 @@ import NoteIndexContainer from './note/note_index_container';
 import NoteShowContainer from './note/note_show_container';
 import NoteFormContainer from './note/note_form_container';
 
+import './App.scss';
+
 const App = () => (
-  <div>
+  <div className="app">
     <NavBarContainer />
     <Switch>
         <Route exact path="/" component={MainPage} />
