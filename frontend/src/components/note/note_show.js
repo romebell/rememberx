@@ -14,8 +14,8 @@ class NoteShow extends React.Component {
     this.getData = this.getData.bind(this);
   }
 
-  componentDidMoubt() {
-    this.props.fetchNote(this.props.match.params.pageId);
+  componentDidMount() {
+    this.props.fetchNote(this.props.match.params.noteId);
   }
 
   componentWillReceiveProps(newState) {
@@ -32,9 +32,18 @@ class NoteShow extends React.Component {
   }
 
   render() {
+
+    const { note } = this.props;
     return (
       <div onClick={this.getData}>
-        NOTE SHOW
+        <h2>NOTE SHOW</h2>
+        <br></br>
+        ID: {note._id}<br></br>
+        Q: {note.question}<br></br>
+        A: {note.answer}<br></br>
+        <br></br>
+        Last Answered: {note.lastAnswered}<br></br>
+        {/* ID: {this.props.note} */}
       </div>
     )
   }

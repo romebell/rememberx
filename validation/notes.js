@@ -8,10 +8,6 @@ module.exports = function validateNoteInput(data) {
   data.answer = validText(data.answer) ? data.answer: '';
   data.userId = validText(data.userId) ? data.userId: '';
 
-  // if (!Validator.isLength(data.text, { min: 5, max: 140 })) {
-  //   errors.text = 'Tweet must be between 5 and 140 characters';
-  // }
-
   if (Validator.isEmpty(data.question)) {
     errors.question = 'Question field is required';
   }

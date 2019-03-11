@@ -6,11 +6,20 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.getData = this.getData.bind(this);
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+  }
+  
+  getData(e) {
+    console.log("GETTING DATA")
+    console.log(this.props)
+    console.log("BREAK")
+    // console.log(this.getState())
+    console.log("DONE GETTING PROPS")
   }
 
   getLinks() {
@@ -34,7 +43,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>Links!</h1>
+        <h1 onClick={this.getData}>Links!</h1>
         { this.getLinks() }
       </div>
     );

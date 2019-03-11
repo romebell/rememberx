@@ -2,6 +2,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NoteIndexItem from './note_index_item';
+import { Link } from 'react-router-dom';
 
 class NoteIndex extends React.Component {
   constructor(props) {
@@ -39,6 +40,11 @@ class NoteIndex extends React.Component {
       return (
         <div onClick={this.getData}>
           There are no notes!
+          <Link to="/notes/new">
+            <div>
+              LINK TO NEW NOTES
+            </div>
+          </Link>
         </div>
       )
     } else {
@@ -49,6 +55,11 @@ class NoteIndex extends React.Component {
           {this.state.notes.map(note => (
             <NoteIndexItem key={note._id} note={note} />
           ))}
+          <Link to="/notes/new">
+            <div>
+              LINK TO NEW NOTES
+            </div>
+          </Link>
         </div>
       )
     }

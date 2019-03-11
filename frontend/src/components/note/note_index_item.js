@@ -11,6 +11,7 @@ class NoteIndexItem extends React.Component {
         <br></br>
         Question: {this.props.note.question}<br></br>
         ID: {this.props.note._id}<br></br>
+        OwnerID: {this.props.note.userId}<br></br>
         {/* Answer: {this.props.note.answer}<br></br>
         Last Time Answered: {this.props.note.lastAnswered}<br></br>
         Last Time Answered Correctly: {this.props.note.lastAnsweredCorrectly}<br></br> */}

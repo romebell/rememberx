@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     // notes: Object.values(state.entities.notes),
     // notes: state.entities.notes,
     // errors: state.errors.session
+    // note: Object.values(state.entities.notes)[ownProps.match.params.noteId],
     // note: state.entities.notes[ownProps.match.params.noteId],
     note: state.entities.notes
   };
