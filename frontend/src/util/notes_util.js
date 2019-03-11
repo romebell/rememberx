@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getNotes = (notesData) => {
-  return axios.get('/api/notes/', notesData);
+export const getNotes = () => {
+  return axios.get('/api/notes');
 };
 
 export const removeNote = (noteId) => {

@@ -1,22 +1,21 @@
 import * as NotesAPIUtil from '../util/notes_util';
-import jwt_decode from 'jwt-decode';
 
 export const RECEIVE_ALL_NOTES = "RECEIVE_ALL_NOTES";
 export const RECEIVE_CURRENT_NOTE = "RECEIVE_CURRENT_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
 export const RECEIVE_NOTE_ERRORS = "RECEIVE_NOTE_ERRORS";
 
-export const receiveCurrentNote = note => ({
+const receiveCurrentNote = note => ({
   type: RECEIVE_CURRENT_NOTE,
   note
 })
 
-export const fetchNotes = notes => ({
+const receiveNotes = notes => ({
   type: RECEIVE_ALL_NOTES,
   notes,
 })
 
-export const removeNote = noteId => ({
+const removeNote = noteId => ({
   type: REMOVE_NOTE,
   noteId
 })
@@ -26,9 +25,9 @@ export const receiveErrors = errors => ({
   errors
 })
 
-export const allNotes = () => dispatch => (
+export const fetchNotes = () => dispatch => (
   NotesAPIUtil.getNotes()
-    .then(notes => dispatch(fetchNotes(notes)),
+    .then(notes => dispatch(receiveNotes(notes)),
       errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
