@@ -1,21 +1,17 @@
 import { connect } from 'react-redux';
 import NoteShow from './note_show';
-import { fetchNote } from '../../actions/notes_actions';
+import { fetchNote, deleteNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // notes: Object.values(state.entities.notes),
-    // notes: state.entities.notes,
-    // errors: state.errors.session
-    // note: Object.values(state.entities.notes)[ownProps.match.params.noteId],
-    // note: state.entities.notes[ownProps.match.params.noteId],
+    currentUser: state.session.user,
     note: state.entities.notes
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // fetchNotes: () => dispatch(fetchNotes()),
+    deleteNote: id => dispatch(deleteNote(id)),
     fetchNote: id => dispatch(fetchNote(id)),
   }
 }

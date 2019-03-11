@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import NoteIndexItem from './note_index_item';
 
 class NoteShow extends React.Component {
@@ -12,6 +12,8 @@ class NoteShow extends React.Component {
     }
 
     this.getData = this.getData.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +22,28 @@ class NoteShow extends React.Component {
 
   componentWillReceiveProps(newState) {
     this.setState({ note: newState.note });
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (this.props.currentUser.id === this.props.note.userId) {
+      this.props.deleteNote(this.props.note._id)
+        .then((response) => this.props.history.push(`/notes/`));
+    } else {
+      console.log("You do not own this, you cannot delete it")
+    }
+  }
+
+  handleEdit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (this.props.currentUser.id === this.props.note.userId) {
+    } else {
+      console.log("You do not own this, you cannot edit it")
+    }
   }
 
 
@@ -43,7 +67,19 @@ class NoteShow extends React.Component {
         A: {note.answer}<br></br>
         <br></br>
         Last Answered: {note.lastAnswered}<br></br>
-        {/* ID: {this.props.note} */}
+        <br></br>
+        <div onClick={this.handleEdit}>
+          EDIT NOTE (NOT IMPLIMENTED DUE TO UPCOMING MODAL)
+        </div>
+        <div onClick={this.handleDelete}>
+        {/* <div onClick={() => this.props.deleteNote(this.props.note._id)}> */}
+          DELETE NOTE
+        </div>
+        <div>
+          <Link to="/notes">
+            NOTE INDEX
+          </Link>
+        </div>
       </div>
     )
   }

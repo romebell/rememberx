@@ -4,7 +4,6 @@ import { createNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state) => {
   return {
-    // errors: state.errors.session
     currentUser: state.session.user,
   };
 };
