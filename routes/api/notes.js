@@ -7,8 +7,6 @@ const jwt = require('jsonwebtoken');
 const Note = require('../../models/Note');
 const validateNoteInput = require('../../validation/notes');
 
-// router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
-// router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 router.get('/', (req, res) => {
   Note.find()
       .sort({ date: -1 })
@@ -17,7 +15,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id',
-  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Note.findById(req.params.id)
       .then(note => res.json(note))
@@ -28,7 +25,6 @@ router.get('/:id',
 );
 
 router.post('/',
-    // passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validateNoteInput(req.body);
 

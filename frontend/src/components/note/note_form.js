@@ -50,7 +50,6 @@ class NoteForm extends React.Component {
     console.log(note)
 
     this.props.createNote(note)
-      // .then((response) => console.log(response)); 
       .then((response) => this.props.history.push(`/notes/${response.note.data._id}`));
   }
 

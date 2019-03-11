@@ -4,7 +4,6 @@ import { fetchNotes } from '../../actions/notes_actions';
 
 const mapStateToProps = (state) => {
   return {
-    // notes: Object.values(state.entities.notes),
     notes: state.entities.notes,
     errors: state.errors.session
   };
@@ -13,8 +12,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchNotes: () => dispatch(fetchNotes()),
-
-    // login: user => dispatch(login(user))
   }
 }
 

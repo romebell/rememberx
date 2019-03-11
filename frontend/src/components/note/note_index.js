@@ -34,8 +34,6 @@ class NoteIndex extends React.Component {
 
 
   render() {
-    // console.log(this.props)
-    // const { notes } = this.props;
     if (this.state.notes.length === 0) {
       return (
         <div onClick={this.getData}>
@@ -50,7 +48,6 @@ class NoteIndex extends React.Component {
     } else {
       return (
         <div onClick={this.getData}>
-        {/* <div> */}
           <h2> All Notes!</h2>
           {this.state.notes.map(note => (
             <NoteIndexItem key={note._id} note={note} />
@@ -63,13 +60,6 @@ class NoteIndex extends React.Component {
         </div>
       )
     }
-    // return (
-    //   <div>
-    //     {/* <span onClick={this.getData}>NOTES TEST</span> */}
-    //     {/* {notes} */}
-    //     {/* {notes.map(note => <NoteIndexItem key={note.id} note={note} />)} */}
-    //   </div>
-    // )
   }
 
 }

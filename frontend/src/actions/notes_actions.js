@@ -31,18 +31,6 @@ export const fetchNotes = () => dispatch => (
       errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
-// export const fetchNotes = () => dispatch => (
-//   NotesAPIUtil.getNotes()
-//     .then(res => {
-//       const { notes } = res.data;
-//       // localStorage.setItem('jwtToken', token);
-//       NotesAPIUtil.getNotes();  
-//     })
-//       .catch(errors => {
-//         dispatch(receiveErrors(errors.response.data))
-//       })
-// )
-
 export const fetchNote = id => dispatch => (
   NotesAPIUtil.getNote(id)
     .then(id => dispatch(receiveNote(id)),

@@ -15,11 +15,11 @@ class NavBar extends React.Component {
   }
   
   getData(e) {
-    console.log("GETTING DATA")
-    console.log(this.props)
-    console.log("BREAK")
+    // console.log("GETTING DATA")
+    // console.log(this.props)
+    // console.log("BREAK")
     // console.log(this.getState())
-    console.log("DONE GETTING PROPS")
+    // console.log("DONE GETTING PROPS")
   }
 
   getLinks() {

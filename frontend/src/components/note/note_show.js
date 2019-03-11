@@ -48,11 +48,11 @@ class NoteShow extends React.Component {
 
 
   getData(e) {
-    console.log("GETTING DATA")
-    console.log(this.props)
-    console.log("BREAK")
-    console.log(this.state)
-    console.log("DONE GETTING PROPS")
+    // console.log("GETTING DATA")
+    // console.log(this.props)
+    // console.log("BREAK")
+    // console.log(this.state)
+    // console.log("DONE GETTING PROPS")
   }
 
   render() {
@@ -72,7 +72,6 @@ class NoteShow extends React.Component {
           EDIT NOTE (NOT IMPLIMENTED DUE TO UPCOMING MODAL)
         </div>
         <div onClick={this.handleDelete}>
-        {/* <div onClick={() => this.props.deleteNote(this.props.note._id)}> */}
           DELETE NOTE
         </div>
         <div>
