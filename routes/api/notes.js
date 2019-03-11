@@ -6,7 +6,24 @@ const passport = require('passport');
 const Note = require('../../models/Note');
 const validateNoteInput = require('../../validation/notes');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the notes route" }));
+router.get('/', (req, res) => {
+  Note.find()
+      .sort({ date: -1 })
+      .then(notes => res.json(notes))
+      .catch(err => res.status(404).json({ noNotesFound: 'No notes found' }));
+});
+
+router.get('/:id',
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Note.findById(req.params.id)
+      .then(note => res.json(note))
+      .catch(error =>
+        res.status(404).json({ noNoteFound: "No note found with that Id" })
+      );
+  }
+);
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),
@@ -27,26 +44,6 @@ router.post('/',
 
 });
 
-// router.delete('/',
-  // passport.authenticate('jwt', { session: false }),
-  // (req, res) => {
-
-    // Note.findOneAndDelete({
-    // Note.findOneAndRemove({
-//       id: req.body.id,
-//     }).then((note) => {
-//       if (!note) {
-//         return res.status(404).send();
-//       }
-//       res.send({
-//         note
-//       });
-//     }).catch(e => {
-//       res.status(400).send();
-//     });
-// });
-
-
 router.delete('/',
   (req, res) => {
     Note.findById(req.body.id)
@@ -60,6 +57,27 @@ router.delete('/',
       })
     .catch(error =>
       res.status(404).json({ noNoteFound: "Note not found" }))
+  });
+
+  router.patch('/:id',
+    (req, res) => {
+      Note.findById(req.params.id)
+        .then(note => {
+          const newNote = new Note({
+            question: req.body.question,
+            answer: req.body.answer,
+            userId: req.user.id,
+            id: req.params.id
+          });
+          // noteOwner = User.findById(note.userId);
+          // if (noteOwner.id === req.user.id) {
+            newNote.save();
+          // } else {
+          //   res.status(403).json({ incorrectPermission: "You cannot edit this note" })
+          // }
+        })
+      .catch(error =>
+        res.status(404).json({ noNoteFound: "Note not found" }))
   });
 
 
