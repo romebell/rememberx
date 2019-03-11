@@ -5,7 +5,7 @@ export const RECEIVE_CURRENT_NOTE = "RECEIVE_CURRENT_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
 export const RECEIVE_NOTE_ERRORS = "RECEIVE_NOTE_ERRORS";
 
-const receiveCurrentNote = note => ({
+const receiveNote = note => ({
   type: RECEIVE_CURRENT_NOTE,
   note
 })
@@ -31,30 +31,26 @@ export const fetchNotes = () => dispatch => (
       errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
+export const fetchNote = id => dispatch => (
+  NotesAPIUtil.getNote(id)
+    .then(id => dispatch(receiveNote(id)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
+)
 
-// export const signup = user => dispatch => (
-//   APIUtil.signup(user).then(() => (
-//     dispatch(receiveUserSignIn())
-//   ), err => (
-//     dispatch(receiveErrors(err.response.data))
-//   ))
-// );
+export const createNote = note => dispatch => (
+  NotesAPIUtil.postNote(note)
+    .then(note => dispatch(receiveNote(note)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
+)
 
-// export const login = user => dispatch => (
-//   APIUtil.login(user).then(res => {
-//     const { token } = res.data;
-//     localStorage.setItem('jwtToken', token);
-//     APIUtil.setAuthToken(token);
-//     const decoded = jwt_decode(token);
-//     dispatch(receiveCurrentUser(decoded))
-//   })
-//   .catch(err => {
-//     dispatch(receiveErrors(err.response.data));
-//   })
-// )
+export const updateNote = note => dispatch => (
+  NotesAPIUtil.patchNote(note)
+    .then(note => dispatch(receiveNote(note)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
+)
 
-// export const logout = () => dispatch => {
-//   localStorage.removeItem('jwtToken')
-//   APIUtil.setAuthToken(false)
-//   dispatch(logoutUser())
-// };
+export const deleteNote = noteId => dispatch => (
+  NotesAPIUtil.deleteNote(noteId)
+    .then(note => dispatch(removeNote(noteId)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
+)

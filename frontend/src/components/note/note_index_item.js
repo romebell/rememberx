@@ -1,31 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NoteIndexItem extends React.Component {
-  // constructor(props) {
-  //   super(props)
-
-
-  //   this.getData = this.getData.bind(this);
-  // }
-
-
-  // getData(e) {
-  //   console.log("GETTING DATA")
-  //   console.log(this.props)
-  //   console.log("BREAK")
-  //   console.log(this.state)
-  //   console.log("DONE GETTING PROPS")
-  // }
-
   render() {
     return (
       // <div onClick={this.getdata}>
       <div>
-        Note Index Item TEST
+        <Link to={`/notes/${this.props.note._id}`}>
         <h4>Note data</h4>
         <br></br>
-        {this.props.note.question}
-        {/* {this.props.note.question} */}
+        Question: {this.props.note.question}<br></br>
+        ID: {this.props.note._id}<br></br>
+        {/* Answer: {this.props.note.answer}<br></br>
+        Last Time Answered: {this.props.note.lastAnswered}<br></br>
+        Last Time Answered Correctly: {this.props.note.lastAnsweredCorrectly}<br></br> */}
+        </Link>
+        <br></br><br></br>
       </div>
     )
   }
