@@ -1,14 +1,14 @@
 import React from 'react';
-
+ 
 class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Remembrrr</h1>
-        <footer>
-          Footer Text
-        </footer>
+      <div className="main-page">
+        <div className="main-page-description">Remembrrr is an application based on the spaced repetition learning technique. Learners review information at gradually increasing intervals for enhanced memory</div>
+
+        <button id="main-page-get-started">Get Started</button>
+
       </div>
     );
   }
