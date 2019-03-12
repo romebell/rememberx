@@ -31,10 +31,16 @@ export const fetchNotes = () => dispatch => (
       errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
+// export const fetchNote = id => dispatch => (
+//   NotesAPIUtil.getNote(id)
+//     .then(id => dispatch(receiveNote(id)),
+//       errors => dispatch(receiveErrors(errors.responseJSON)))
+// )
+
 export const fetchNote = id => dispatch => (
   NotesAPIUtil.getNote(id)
-    .then(id => dispatch(receiveNote(id)),
-      errors => dispatch(receiveErrors(errors.responseJSON)))
+    .then(id => dispatch(receiveNote(id)))
+      .catch(errors => console.log(errors))
 )
 
 export const createNote = note => dispatch => (

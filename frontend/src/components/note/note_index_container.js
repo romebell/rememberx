@@ -1,11 +1,15 @@
 import { connect } from 'react-redux';
 import NoteIndex from './note_index';
 import { fetchNotes } from '../../actions/notes_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    // thisNote: state.entities.notes,
     notes: state.entities.notes,
-    errors: state.errors.session
+    errors: state.errors.session,
+    // currentNote: state.entities.notes[ownProps.match.params.noteId],
+    ownPropsNoteId: ownProps.match.params.noteId
   };
 };
 
@@ -15,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NoteIndex);
+)(NoteIndex));

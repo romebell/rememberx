@@ -1,0 +1,1 @@
+export const selectAllNotes = state => Object.values(Object.values(state.entities.notes).filter((e)  => e.userId === (typeof state.session.currentUser !== 'undefined' && state.session.currentUser !== null ? state.session.currentUser.id : -1)));

@@ -1,21 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class NoteIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const { note, monthNames } = this.props;
     return (
-      <div>
-        <Link to={`/notes/${this.props.note._id}`}>
-          <h4>Note data</h4>
-          <br></br>
-          Question: {this.props.note.question}<br></br>
-          ID: {this.props.note._id}<br></br>
-          OwnerID: {this.props.note.userId}<br></br>
-        </Link>
-        <br></br><br></br>
+      <div className="note-index-item">
+        <div className="note-item-question">
+          {this.props.note.question}
+        </div><br></br>
+        <div className="note-item-last-answered">
+          {/* Last Answered: {this.props.note.lastAnswered} */}
+          Last Answered:&nbsp;
+            { monthNames[(note.lastAnsweredCorrectly.slice(5, 7) % 12)].slice(0, 3)}&nbsp;
+            {note.lastAnsweredCorrectly.slice(8, 10)},&nbsp;
+            {note.lastAnsweredCorrectly.slice(0, 4)}
+        </div>
+        <div className="note-item-next-review">
+          Next Review: 
+        </div>
       </div>
     )
   }
 }
 
-export default NoteIndexItem;
+export default withRouter(NoteIndexItem);

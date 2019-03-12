@@ -12,6 +12,8 @@ import NoteShowContainer from './note/note_show_container';
 import NoteFormContainer from './note/note_form_container';
 
 import './App.scss';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
 
 const App = () => (
   <div className="app">
@@ -20,9 +22,13 @@ const App = () => (
     <GreetingContainer />
     <Switch>
         <Route exact path="/" component={MainPage} />
-        <ProtectedRoute exact path="/notes" component={NoteIndexContainer} />
-        <ProtectedRoute exact path="/notes/new" component={NoteFormContainer} />
-        <ProtectedRoute exact path="/notes/:noteId" component={NoteShowContainer} />
+        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path="/notes/new" component={NoteFormContainer} />
+        <ProtectedRoute path="/notes/:noteId" component={NoteIndexContainer} />
+        <ProtectedRoute path="/notes" component={NoteIndexContainer} />
+        {/* <ProtectedRoute exact path="/notes/:noteId" component={NoteIndexContainer} /> */}
+        {/* <ProtectedRoute exact path="/notes/:noteId" component={NoteShowContainer} /> */}
         <Redirect from="*" to="/" />
     </Switch>
   </div>

@@ -1,0 +1,70 @@
+.notes {
+  display: flex;
+}
+
+.note-index {
+  position: relative;
+  left: 0;
+  width: 30%;
+  background-color: white;
+  border-top: 1px solid #DADCE0;
+  border-right: 1px solid #DADCE0;
+  border-bottom: 1px solid #DADCE0;
+  margin-left: 15px;
+  height: 100%;
+}
+
+.note-index a {
+  text-decoration: none;
+  color: black;
+}
+
+.note-index-header {
+  // text-align: center;
+  border-bottom: 1px solid #DADCE0;
+}
+
+.note-index-title {
+  margin: 0 auto;
+  text-align: center;
+  border-right: 1px solid #DADCE0;
+  // border-bottom: 1px solid #DADCE0;
+  float: left;
+  width: 30%;
+}
+
+.note-index-new {
+  margin: 0 auto;
+  text-align: center;
+  // float: right;
+  width: 30%;
+  border-right: 1px solid #DADCE0;
+  // border-bottom: 1px solid #DADCE0;
+}
+
+.note-index-item {
+  padding-left: 15px;
+  padding-top: 5px;
+  border-bottom: 1px solid #DADCE0;
+  cursor: pointer;
+}
+
+.note-index-item:hover {
+  // border: 1px solid cyan;
+  background-color: cyan;
+}
+
+.note-index-item:focus {
+  // border: 1px solid magenta;
+  background-color: magenta;
+}
+
+.note-item-question {
+  font-weight: bold;
+}
+
+.note-show {
+  background-color: green;
+}
+
+
