@@ -1,5 +1,32 @@
 import React from 'react';
+import styled from 'styled-components'
 import { withRouter } from 'react-router-dom';
+
+const Input = styled.input`
+  padding: 1em;
+  margin: 1em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  
+  `;
+  
+  const SubmitButton = styled(Button)`
+  color: white;
+  background: #FFA725;
+  border-color: #FFA725;
+`;
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -55,21 +82,21 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
+        <div><h2>Sign into Remembrrr</h2></div>
+        <br />
         <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
+          <div className="login-form">
+            <Input placeholder="Email" type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
               />
             <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
+            <Input placeholder="Password" type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
             <br/>
-            <input type="submit" value="Submit" />
+            <SubmitButton>Log In</SubmitButton>
             {this.renderErrors()}
           </div>
         </form>

@@ -26,7 +26,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     )
   };
 
-  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  return (
+    currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  )
 
 };
 
