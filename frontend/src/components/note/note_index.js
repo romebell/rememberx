@@ -21,12 +21,25 @@ class NoteIndex extends React.Component {
   }
 
   getData(e) {
-    // console.log("GETTING DATA")
-    // console.log(this.props)
-    // console.log("BREAK")
-    // console.log(currentNote)
-    // console.log("DONE GETTING PROPS")
+    console.log("GETTING DATA")
+    console.log(this.props)
+    console.log("BREAK")
+    // console.log(Object.values(this.props.notes).length)
+    const allNotes = Object.values(this.props.notes);
+    let allNotesSorted = allNotes.sort(function(a, b){
+      return new Date(b.lastAnswered) - new Date(a.lastAnswered);
+    });
+    console.log(allNotesSorted)
+    console.log("DONE GETTING PROPS")
   }
+
+  componentDidUpdate(prevProps) {
+    if (Object.values(prevProps.notes).length !== Object.values(this.props.notes).length) {
+      console.log('Page count changed')
+      this.props.fetchNotes();
+    }
+  }
+
 
   
   render() {
@@ -36,6 +49,9 @@ class NoteIndex extends React.Component {
 
   const allNotes = Object.values(this.props.notes);
   let currentNote = allNotes.filter((e) => e._id === this.props.match.params.noteId)
+  let allNotesSorted = allNotes.sort(function(a, b){
+    return new Date(b.lastAnswered) - new Date(a.lastAnswered);
+  });
 
     if (this.state.notes === []) {
       return (
@@ -53,20 +69,22 @@ class NoteIndex extends React.Component {
         <div className="notes">
           <section onClick={this.getData} className="note-index">
             <section className="note-index-header">
-              <div className="note-index-title">All</div>
-              <div className="note-index-new">
-                <Link to="/notes/new">New</Link>
-              </div>
+              <Link to="/notes/">
+                <div className="note-index-title">All</div>
+              </Link>
+              <Link to="/notes/new">
+                <div className="note-index-new">New</div>
+              </Link>
             </section>
             <section>
-              {allNotes ? allNotes.map(note => (
+              {allNotesSorted ? allNotesSorted.map(note => (
                 <Link to={`/notes/${note._id}`}>
                   <NoteIndexItem key={note._id} note={note} monthNames={monthNames} />
                 </Link>
               )) : ''}
             </section>
           </section>
-          <section className="note-show">
+          <section className={`note-show ${this.props.location.pathname.length < 10 ? 'hide-element' : ''}`}>
             <NoteShowContainer currentNote={currentNote} />
           </section>
         </div>

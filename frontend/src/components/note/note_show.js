@@ -7,12 +7,6 @@ class NoteShow extends React.Component {
     super(props);
 
     this.state = {
-      // note: {
-      //   question: '',
-      //   answer: '',
-      //   id: '',
-      //   lastAnswered: ''
-      // },
       noteId: '',
       noteQuestion: '',
       noteAnswer: '',
@@ -24,41 +18,14 @@ class NoteShow extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.fetchNote(this.props.match.params.noteId);
-    // this.props.fetchNote(this.props.noteId)
-    // .then((response) => console.warn(response))
-      // .then((response) => this.setState({
-      //   note: response.note,
-      //   noteQuestion: response.note.question,
-      //   noteAnswer: response.note.answer
-      // }))
-      
-      // console.log('MOUNTED')
-    // this.props.fetchPage(this.props.match.params.pageId)
-    // .then((response) => this.setState({
-    //   page: response.page,
-    //   pageTitle: response.page.title,
-    //   pageBody: response.page.body,
-    // }))
-  }
-
-  componentWillReceiveProps(newState) {
-    // this.setState({ thisNote: newState.note.first });
-    // this.setState({ noteId: newState.currentLocation.pathname.slice(7)});
-  }
-
   componentDidUpdate(prevProps) {
-    // if (this.props.match.params.noteId !== prevProps.match.params.noteId ) {
-    if (this.props.currentNote !== prevProps.currentNote) {
+    if ( this.props.currentNote[0] != undefined && this.props.currentNote !== prevProps.currentNote ) {
       this.setState({
         noteId: Object.values(this.props.currentNote[0]._id),
         noteQuestion: Object.values(this.props.currentNote[0].question),
         noteAnswer: Object.values(this.props.currentNote[0].answer),
         noteLastAnswered: Object.values(this.props.currentNote[0].lastAnswered),
       })
-      console.log(this.props.currentNote)
-      console.log('DETECTED PROP CHANGE')
     }
   }
 
@@ -68,7 +35,8 @@ class NoteShow extends React.Component {
 
     if (this.props.currentUser.id === this.props.currentNote[0].userId) {
       this.props.deleteNote(this.props.currentNote[0]._id)
-        .then((response) => this.props.history.push(`/notes/`));
+        .then((response) => this.props.history.push(`/notes/`))
+        .then(() => this.props.fetchNotes());
     } else {
       console.log("You do not own this, you cannot delete it")
     }
@@ -96,15 +64,16 @@ class NoteShow extends React.Component {
   render() {
 
       return (
-        <div onClick={this.getData}>
-          <h2>NOTE SHOW</h2>
-          <br></br>
-          ID: {this.state.noteId}<br></br>
+        <div onClick={this.getData} className="note-show">
+        <div className="note-show-question">
           Q: {this.state.noteQuestion}<br></br>
+        </div><br></br>
+        <div className="note-show-answer">
           A: {this.state.noteAnswer}<br></br>
-          <br></br>
+        </div><br></br>
+        <div className="note-show-last-answered">
           Last Answered: {this.state.noteLastAnswered}<br></br>
-          <br></br>
+        </div><br></br>
           <div onClick={this.handleEdit}>
             EDIT NOTE (NOT IMPLIMENTED DUE TO UPCOMING MODAL)
           </div>

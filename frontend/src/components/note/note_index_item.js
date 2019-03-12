@@ -9,12 +9,12 @@ class NoteIndexItem extends React.Component {
   render() {
     const { note, monthNames } = this.props;
     return (
-      <div className="note-index-item">
+      // <div className="note-index-item">
+      <button className="note-index-item">
         <div className="note-item-question">
           {this.props.note.question}
         </div><br></br>
         <div className="note-item-last-answered">
-          {/* Last Answered: {this.props.note.lastAnswered} */}
           Last Answered:&nbsp;
             { monthNames[(note.lastAnsweredCorrectly.slice(5, 7) % 12)].slice(0, 3)}&nbsp;
             {note.lastAnsweredCorrectly.slice(8, 10)},&nbsp;
@@ -23,7 +23,8 @@ class NoteIndexItem extends React.Component {
         <div className="note-item-next-review">
           Next Review: 
         </div>
-      </div>
+      </button>
+      // </div>
     )
   }
 }
