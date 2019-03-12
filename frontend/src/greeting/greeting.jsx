@@ -14,7 +14,6 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     </div>
   );
   const personalGreeting = () => {
-    debugger
     return (
         <hgroup className="header-group">
         <h2 className="header-name">Hi, {currentUser.username}!</h2>
@@ -23,11 +22,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     )
   };
 
-  return (
-    currentUser ?
-    personalGreeting(currentUser, logout) :
-    sessionLinks()
-  );
+  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+
 };
 
 export default Greeting;
