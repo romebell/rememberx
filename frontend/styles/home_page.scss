@@ -1,28 +1,123 @@
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Varela';
+  src: url('../fonts/VarelaRound-Regular.ttf');
+}
+
 body {
-    background-color: lightgrey;
+    // background-color: lightgrey;
+    border: 1px dashed grey;
 }
 
 .app {
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 9fr;
-    background-color: lightblue;
+    // background-color: lightblue;
 
     .navbar {
         display: grid;
-        grid-template-columns: 2fr 5fr 3fr;
-        background-color: pink;
+        grid-template-columns: 1fr 1fr 1fr;
+        // background-color: pink;
+        border: 1px dashed blue;
+
 
         .logo {
+            font-family: 'Varela';
+            font-size: 1.5em;
             grid-column-start: 1;
             grid-column-end: 2;
+            color: #f08b00c4;
+            font-weight: 800;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 20px;
+            align-items: center;
+
+            .logo-image {
+                height: 40px;
+                width: 40px;
+                background-image: url('../images/memory.png');
+                opacity: 0.6;
+                background-repeat: no-repeat;
+                background-size: auto 70%;
+                background-position: center;
+            }
         }
 
         .navbar-links {
+            display: flex;
+            justify-content: space-around;
             grid-column-start: 3;
             grid-column-end: 4;
+            border: 1px dashed red;
+        }
+    }
+
+    .main-page {
+        display: grid;
+        border: 1px dashed green;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5fr 1fr;
+
+        .main-page-description {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            font-family: 'Roboto';
+
+
+            .main-page-description-one {
+                padding: 0 10px;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.8em;
+                .highlight{
+                    color:  #f08b00;
+                }
+            }
+
+            .main-page-description-two {
+                padding: 0px 30px;
+                padding-bottom: 30px;
+                height: 50%;
+                display: flex;
+                align-items: center;
+                text-align: justify;
+                font-size: 18px;
+                .highlight{
+                    color:  #f08b00;
+
+                }
+            }
+
+            #main-page-get-started {
+                display: block;
+                margin: auto;
+                width: 30%;
+                height: 50px;
+                border-radius: 5px;
+                background-color: #f08b00;
+                color: white;
+            }
+        
         }
 
+        .main-page-image {
+            background-image: url('../images/memory.png');
+            background-repeat: no-repeat;
+            background-size: auto 70%;
+            background-position: center;
+            padding-top: 5px;
+        }
     }
 }
