@@ -1,5 +1,6 @@
 .notes {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .note-index {
@@ -28,18 +29,30 @@
   margin: 0 auto;
   text-align: center;
   border-right: 1px solid #DADCE0;
-  // border-bottom: 1px solid #DADCE0;
+  border-bottom: 3px solid transparent;
   float: left;
   width: 30%;
 }
 
+.note-index-title:hover {
+  background-color: #FFFFE3; 
+  cursor: pointer;
+  border-bottom: 3px solid rgb(160, 137, 7);
+}
+
 .note-index-new {
-  margin: 0 auto;
+  // margin: 0 auto;
+  display: inline-block;
   text-align: center;
-  // float: right;
   width: 30%;
   border-right: 1px solid #DADCE0;
-  // border-bottom: 1px solid #DADCE0;
+  border-bottom: 3px solid transparent;;
+}
+
+.note-index-new:hover {
+  background-color: #FFFFE3; 
+  cursor: pointer;
+  border-bottom: 3px solid rgb(160, 137, 7)
 }
 
 .note-index-item {
@@ -47,16 +60,27 @@
   padding-top: 5px;
   border-bottom: 1px solid #DADCE0;
   cursor: pointer;
+  width: 100%;
+  border-left: 5px solid transparent;
+  border-top: 1px solid transparent;
+  text-decoration: none;
+}
+
+.note-index-item:active {
+  text-decoration: none;
 }
 
 .note-index-item:hover {
   // border: 1px solid cyan;
-  background-color: cyan;
+  background-color: #FFFFE3;
+  text-decoration: none;
 }
 
 .note-index-item:focus {
   // border: 1px solid magenta;
-  background-color: magenta;
+  background-color: #FFFFE3;
+  border-left: 5px solid rgb(160, 137, 7);
+  outline: 0;
 }
 
 .note-item-question {
@@ -67,4 +91,7 @@
   background-color: green;
 }
 
+.hide-element {
+  display: none;
+}
 
