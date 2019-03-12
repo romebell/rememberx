@@ -11,8 +11,12 @@ import { setAuthToken } from './util/session_api_util';
 
 import { logout } from './actions/session_actions';
 
+import {requestUser} from './actions/user_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+
+  window.requestUser = requestUser;
 
   if (localStorage.jwtToken) {
 

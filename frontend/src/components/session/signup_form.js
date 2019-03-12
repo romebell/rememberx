@@ -1,5 +1,32 @@
 import React from 'react';
+import styled from 'styled-components'
 import { withRouter } from 'react-router-dom';
+
+const Input = styled.input`
+  padding: 1em;
+  margin: 1em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  
+  `;
+  
+  const SubmitButton = styled(Button)`
+  color: white;
+  background: #FFA725;
+  border-color: #FFA725;
+`;
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -60,31 +87,32 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br/>
-              <input type="text"
+              <Input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"
               />
             <br/>
-              <input type="text"
+              <Input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
             <br/>
-              <input type="password"
+              <Input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
             <br/>
-              <input type="password"
+              <Input type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <SubmitButton>Submit</SubmitButton>
+            {/* < type="submit" value="Submit" /> */}
             {this.renderErrors()}
           </div>
         </form>
