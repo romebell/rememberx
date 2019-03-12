@@ -11,7 +11,7 @@ const db = require('./config/keys').mongoURI;
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.statc('frontend/build'));
+  app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
     res.send(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
