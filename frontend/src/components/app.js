@@ -16,7 +16,7 @@ import './App.scss';
 const App = () => (
   <div className="app">
     <Modal />
-    <NavBarContainer />
+    {/* <NavBarContainer /> */}
     <GreetingContainer />
     <Switch>
         <Route exact path="/" component={MainPage} />

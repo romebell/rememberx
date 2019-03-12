@@ -20,8 +20,11 @@ body {
         }
 
         .navbar-links {
+            display: flex;
+            justify-content: space-around;
             grid-column-start: 3;
             grid-column-end: 4;
+            border: 1px solid red;
         }
 
     }
