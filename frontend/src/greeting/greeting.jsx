@@ -6,6 +6,10 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
     <div className="navbar">
+      <div className="logo">
+        <div className="logo-image"></div>
+        <div className="logo-text">REMEMBRRR</div>
+      </div>
       <nav className="navbar-links">
         <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
         {/* &nbsp;or&nbsp; */}
