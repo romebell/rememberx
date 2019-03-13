@@ -1,15 +1,13 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 
-
-
 const Greeting = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
-    <div className="navbar">
+    <div className="navbar" onClick={() => console.log(currentUser)}>
       <div className="logo">
         <div className="logo-image"></div>
-        <div className="logo-text">REMEMBRRR</div>
+        <div className="logo-text" onClick={() => console.log(currentUser)}>REMEMBRRR</div>
       </div>
       <nav className="navbar-links">
         <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
@@ -19,7 +17,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   );
   const personalGreeting = () => {
     return (
-        <hgroup className="header-group">
+        <hgroup className="header-group" >
         <h2 className="header-name">Hi, {currentUser.name}!</h2>
         <button className="header-button" onClick={logout}>Log Out</button>
       </hgroup>
