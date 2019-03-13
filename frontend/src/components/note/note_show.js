@@ -11,11 +11,13 @@ class NoteShow extends React.Component {
       noteQuestion: '',
       noteAnswer: '',
       noteLastAnswered: '',
+      showQuestion: true,
     }
 
     this.getData = this.getData.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.showAnswer = this.showAnswer.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -52,6 +54,17 @@ class NoteShow extends React.Component {
     }
   }
 
+  showAnswer(e) {
+    if (this.state.showQuestion) {
+      this.setState({
+        showQuestion: false,
+      })
+    } else {
+      this.setState({
+        showQuestion: true,
+      })
+    }
+  }
 
   getData(e) {
     // console.log("GETTING DATA")
@@ -65,26 +78,38 @@ class NoteShow extends React.Component {
 
       return (
         <div onClick={this.getData} className="note-show">
-        <div className="note-show-question">
-          Q: {this.state.noteQuestion}<br></br>
-        </div><br></br>
-        <div className="note-show-answer">
-          A: {this.state.noteAnswer}<br></br>
-        </div><br></br>
-        <div className="note-show-last-answered">
-          Last Answered: {this.state.noteLastAnswered}<br></br>
-        </div><br></br>
-          <div onClick={this.handleEdit}>
-            EDIT NOTE (NOT IMPLIMENTED DUE TO UPCOMING MODAL)
-          </div>
-          <div onClick={this.handleDelete}>
-            DELETE NOTE
-          </div>
-          <div>
-            <Link to="/notes">
-              NOTE INDEX
-            </Link>
-          </div>
+          <section className="note-show-information">
+            {/* <div className={`note-show-question ${this.state.showQuestion ? '' : 'remove-element'}`}> */}
+            {this.state.showQuestion ? (
+              <div className={`note-show-question`}>
+                Q: {this.state.noteQuestion}
+              </div> ) : (
+              <div className={`note-show-answer`}>
+                A: {this.state.noteAnswer}
+            </div>)}<br></br>
+            {/* <div className={`note-show-answer ${this.state.showQuestion ? 'remove-element' : ''}`}>
+              A: {this.state.noteAnswer}<br></br>
+            </div><br></br> */}
+            {/* <div className="note-show-last-answered">
+              Last Answered: {this.state.noteLastAnswered}<br></br>
+            </div><br></br> */}
+          </section>
+          <section className="note-show-buttons">
+            <div onClick={this.handleEdit} className="note-show-edit">
+              Edit
+            </div>
+            <div onClick={this.showAnswer} className="note-show-toggle">
+              {this.state.showQuestion ? 'Answer' : 'Question'}
+            </div>
+            <div onClick={this.handleDelete} className="note-show-delete">
+              Delete
+            </div>
+            {/* <div>
+              <Link to="/notes">
+                NOTE INDEX
+              </Link>
+            </div> */}
+          </section>
         </div>
       )
     // }

@@ -84,7 +84,7 @@ class NoteIndex extends React.Component {
               )) : ''}
             </section>
           </section>
-          <section className={`note-show ${this.props.location.pathname.length < 10 ? 'hide-element' : ''}`}>
+          <section className={`${this.props.location.pathname.length < 10 ? 'hide-element' : ''}`}>
             <NoteShowContainer currentNote={currentNote} />
           </section>
         </div>
