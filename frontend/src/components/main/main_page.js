@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import picture from './red-card.png';
 
 class MainPage extends React.Component {
 
   render() {
     return (
       <div className="main-page">
-        {/* <img src={picture} /> */}
         <div className="main-page-description">
             <div className="main-page-description-one">
               <p>
@@ -22,9 +20,6 @@ class MainPage extends React.Component {
             <button id="main-page-get-started">Get Started</button>
         </div>
         <div className="main-page-image"></div>
-            <Link to="/notes/">
-              NOTE INDEX
-            </Link>
         {/* <footer>
           Footer Text
         </footer> */}
