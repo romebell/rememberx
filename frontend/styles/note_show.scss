@@ -1,9 +1,59 @@
 .note-show {
-  display: flex;
-  justify-content: flex-start;
+  // display: flex;
+  // justify-content: flex-start;
+  padding: 20px;
+  min-height: 200px;
+  box-sizing: border-box;
+  // border: 5px solid rgb(160, 137, 7);
+  border: 5px solid #f08b00;
+  position: relative;
+  left: 0;
+  top: 200px;
+  width: 500px;
+  background-color: #FFFFE3; 
+  // background-color: darkgray;
+
+}
+
+.note-show-information {
+  // width: 100%;
+  width: 400px;
   padding: 20px;
 }
 
-.note-show-question {
+.note-show-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  // bottom: 5px;
+  width: 90%;
+  // border-bottom: 5px solid transparent;
+  // color: teal;
+}
+
+.note-show-buttons div {
+  cursor: pointer;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 3px solid transparent;
+}
+
+.note-show-buttons div:hover {
+  background-color: #FFFFE3; 
+  cursor: pointer;
+  // border-bottom: 3px solid #f08b00;
+  border-bottom: 3px solid blue;
+}
+
+.remove-element {
+  display: none;
+}
+
+.note-show-errors {
+  display: block;
+  height: 20px;
   width: 100%;
+  text-align: center;
+  // margin-top: 10px;
+  color: rgb(172, 12, 12);
 }

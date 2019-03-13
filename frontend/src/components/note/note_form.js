@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { networkInterfaces } from 'os';
 
 class NoteForm extends React.Component {
   constructor(props) {
