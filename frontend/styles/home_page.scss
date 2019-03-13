@@ -58,24 +58,32 @@ body {
             border: 1px dashed red;
             font-family: 'Roboto';
             font-style: bold;
+
             .signup-link {
                 border: none;
                 background: none;
                 font-family: 'Roboto';
-                font-size: 0.8em;
+                font-size: 1em;
                 font-style: bold;
                 font-weight: 900;
                 color: rgb(0, 189, 212);
+                text-transform: uppercase;
             }
 
             .login-link {
                 border: none;
                 background: none;
                 font-family: 'Roboto';
-                font-size: 0.8em;
+                font-size: 1em;
                 font-style: bold;
                 font-weight: 900;
                 color: rgb(0, 189, 212);
+                text-transform: uppercase;
+
+            }
+
+            .link-hover:hover {
+                cursor: pointer;
             }
         }
     }

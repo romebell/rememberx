@@ -21,9 +21,9 @@ const App = () => (
     {/* <NavBarContainer /> */}
     <GreetingContainer />
     <Switch>
-        <Route exact path="/" component={MainPage} />
-        {/* <Route path="/login" component={LoginFormContainer} /> */}
-        {/* <Route path="/signup" component={SignupFormContainer} /> */}
+        <AuthRoute exact path="/" component={MainPage} />
+        {/* <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} /> */}
         <ProtectedRoute path="/notes/new" component={NoteFormContainer} />
         <ProtectedRoute path="/notes/:noteId" component={NoteIndexContainer} />
         <ProtectedRoute path="/notes" component={NoteIndexContainer} />
