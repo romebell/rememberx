@@ -23,20 +23,19 @@ class NoteIndex extends React.Component {
   }
 
   getData(e) {
-    console.log("GETTING DATA")
-    console.log(this.props)
-    console.log("BREAK")
-    const allNotes = Object.values(this.props.notes);
-    let allNotesSorted = allNotes.sort(function(a, b){
-      return new Date(b.lastAnswered) - new Date(a.lastAnswered);
-    });
-    console.log(allNotesSorted)
-    console.log("DONE GETTING PROPS")
+    // console.log("GETTING DATA")
+    // console.log(this.props)
+    // console.log("BREAK")
+    // const allNotes = Object.values(this.props.notes);
+    // let allNotesSorted = allNotes.sort(function(a, b){
+    //   return new Date(b.lastAnswered) - new Date(a.lastAnswered);
+    // });
+    // console.log(allNotesSorted)
+    // console.log("DONE GETTING PROPS")
   }
 
   componentDidUpdate(prevProps) {
     if (Object.values(prevProps.notes).length !== Object.values(this.props.notes).length) {
-      console.log('Page count changed')
       this.props.fetchNotes();
     }
   }

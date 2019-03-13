@@ -23,11 +23,11 @@ class NoteForm extends React.Component {
   }
 
   getData(e) {
-    console.log("GETTING DATA")
-    console.log(this.props)
-    console.log("BREAK")
-    console.log(this.props.currentUser)
-    console.log("DONE GETTING PROPS")
+    // console.log("GETTING DATA")
+    // console.log(this.props)
+    // console.log("BREAK")
+    // console.log(this.props.currentUser)
+    // console.log("DONE GETTING PROPS")
   }
 
   update(field) {
@@ -46,8 +46,6 @@ class NoteForm extends React.Component {
       answer: this.state.answer,
       userId: currentUser.id,
     };
-
-    console.log(note)
 
     if (this.state.question === '' || this.state.answer === '') {
       this.setState({

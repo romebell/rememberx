@@ -1,12 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class MainPage extends React.Component {
-  constructor(props){
-    super(props);
-  }
   render() {
-    debugger;
     return (
       <div className="main-page">
         <div className="main-page-description">
