@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Modal from '../modal/note_modal';
 
 class NoteShow extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class NoteShow extends React.Component {
       noteLastAnswered: '',
       showQuestion: true,
       errors: [],
+      active: false,
     }
 
     this.getData = this.getData.bind(this);
@@ -22,7 +23,7 @@ class NoteShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if ( this.props.currentNote[0] != undefined && this.props.currentNote !== prevProps.currentNote ) {
+    if ( this.props.currentNote[0] !== undefined && this.props.currentNote !== prevProps.currentNote ) {
       this.setState({
         noteId: Object.values(this.props.currentNote[0]._id),
         noteQuestion: Object.values(this.props.currentNote[0].question),
@@ -95,6 +96,7 @@ class NoteShow extends React.Component {
 
       return (
         <div onClick={this.getData} className="note-show">
+          <Modal />
           <section className="note-show-information">
             {this.state.showQuestion ? (
               <div className={`note-show-question`}>
@@ -105,9 +107,10 @@ class NoteShow extends React.Component {
             </div>)}<br></br>
           </section>
           <section className="note-show-buttons">
-            {/* <div onClick={this.handleEdit} className="note-show-edit">
+            {/* <div onClick={this.handleEdit} className="note-show-edit"> */}
+            <div onClick={() => this.props.openModal('edit')} className="note-show-edit">
               Edit
-            </div> */}
+            </div>
             <div onClick={this.showAnswer} className="note-show-toggle">
               {this.state.showQuestion ? 'Answer' : 'Question'}
             </div>

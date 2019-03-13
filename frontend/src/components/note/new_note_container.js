@@ -6,8 +6,10 @@ import { createNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state) => {
   return {
-    formType: 'new'
+    formType: 'new',
+    currentUser: state.session.user,
   };
+
 };
 
 const mapDispatchToProps = dispatch => {
