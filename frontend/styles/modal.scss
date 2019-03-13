@@ -1,18 +1,58 @@
+// .modal-background {
+//   position: fixed;
+//   top: 200px;
+//   bottom: 200px;
+//   right: 250px;
+//   left: 250px;
+//   background: rgba(0, 0, 0, 0.7);
+//   z-index: 10;
+// }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
 .modal-background {
   position: fixed;
-  top: 200px;
-  bottom: 200px;
-  right: 250px;
-  left: 250px;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
 }
 
+// .modal-child {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
 .modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: white;
+  width: 400px;
+  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
+
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 0px 40px;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+  h2 {
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
 
 
@@ -46,11 +86,19 @@
   box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
 }
 
-.login-form {
+// .login-form {
+//   display: flex;
+//   height: 100%;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-content: center;
+// }
+
+.form {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: center;
 }
 // .closed {
 //   display: none;

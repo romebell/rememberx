@@ -2,7 +2,6 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 import GreetingContainer from '../greeting/greeting_container';
-import NavBarContainer from './nav/navbar_container';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import MainPage from './main/main_page';
@@ -19,8 +18,6 @@ const App = () => (
     <GreetingContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPage} />
-        {/* <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} /> */}
         <ProtectedRoute path="/notes/new" component={NoteFormContainer} />
         <ProtectedRoute path="/notes/:noteId" component={NoteIndexContainer} />
         <ProtectedRoute path="/notes" component={NoteIndexContainer} />

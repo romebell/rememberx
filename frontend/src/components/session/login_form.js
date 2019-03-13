@@ -5,27 +5,39 @@ import { withRouter } from 'react-router-dom';
 const Input = styled.input`
   padding: 1em;
   margin: 1em;
-  color: palevioletred;
+  color: black;
   background: papayawhip;
   border: none;
   border-radius: 3px;
+  font-size: 12px;
 `;
 
 const Button = styled.button`
   color: palevioletred;
   font-size: 1em;
-
   margin: 1em;
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-  
   `;
   
   const SubmitButton = styled(Button)`
   color: white;
   background: #FFA725;
   border-color: #FFA725;
+`;
+
+const ModalHeader = styled.header`
+  text-align: center;
+  padding: 1.5em;
+`;
+
+const LogForm = styled.form`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
 `;
 
 class LoginForm extends React.Component {
@@ -84,10 +96,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <div><h2>Sign into Remembrrr</h2></div>
         <br />
         <form onSubmit={this.handleSubmit}>
-          <div className="login-form">
+          <LogForm>
+          <ModalHeader>Sign into Remembrrr</ModalHeader>
             <Input placeholder="Email" type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -100,7 +112,7 @@ class LoginForm extends React.Component {
             <br/>
             <SubmitButton>Log In</SubmitButton>
             {this.renderErrors()}
-          </div>
+          </LogForm>
         </form>
       </div>
     );
