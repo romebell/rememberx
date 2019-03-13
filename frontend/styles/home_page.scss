@@ -22,7 +22,7 @@ body {
 
     .navbar {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 4fr 2fr;
         // background-color: pink;
         border: 1px dashed blue;
 
@@ -56,6 +56,27 @@ body {
             grid-column-start: 3;
             grid-column-end: 4;
             border: 1px dashed red;
+            font-family: 'Roboto';
+            font-style: bold;
+            .signup-link {
+                border: none;
+                background: none;
+                font-family: 'Roboto';
+                font-size: 0.8em;
+                font-style: bold;
+                font-weight: 900;
+                color: rgb(0, 189, 212);
+            }
+
+            .login-link {
+                border: none;
+                background: none;
+                font-family: 'Roboto';
+                font-size: 0.8em;
+                font-style: bold;
+                font-weight: 900;
+                color: rgb(0, 189, 212);
+            }
         }
     }
 

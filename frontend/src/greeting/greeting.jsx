@@ -11,9 +11,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <div className="logo-text">REMEMBRRR</div>
       </div>
       <nav className="navbar-links">
-        <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
+        <button className="signup-link" onClick={() => openModal('signup')}>SIGNUP</button>
         {/* &nbsp;or&nbsp; */}
-        <button className="login-link" onClick={() => openModal('login')}>Login</button>
+        <button className="login-link" onClick={() => openModal('login')}>LOGIN</button>
       </nav>
     </div>
   );
