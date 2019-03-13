@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import NoteIndexItem from './note_index_item';
 import { Link } from 'react-router-dom';
 import NoteShowContainer from './note_show_container';
+import Modal from '../modal/note_modal';
 
 class NoteIndex extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class NoteIndex extends React.Component {
 
     this.state = {
       notes: null,
+      active: false,
     }
 
     this.getData = this.getData.bind(this);
@@ -24,7 +26,6 @@ class NoteIndex extends React.Component {
     console.log("GETTING DATA")
     console.log(this.props)
     console.log("BREAK")
-    // console.log(Object.values(this.props.notes).length)
     const allNotes = Object.values(this.props.notes);
     let allNotesSorted = allNotes.sort(function(a, b){
       return new Date(b.lastAnswered) - new Date(a.lastAnswered);
@@ -67,14 +68,13 @@ class NoteIndex extends React.Component {
     } else {
       return (
         <div className="notes">
+          <Modal />
           <section onClick={this.getData} className="note-index">
             <section className="note-index-header">
               <Link to="/notes/">
                 <div className="note-index-title">All</div>
               </Link>
-              <Link to="/notes/new">
-                <div className="note-index-new">New</div>
-              </Link>
+              <div className="note-index-new" onClick={() => this.props.openModal('new')}>New</div>
             </section>
             <section>
               {allNotesSorted ? allNotesSorted.map(note => (

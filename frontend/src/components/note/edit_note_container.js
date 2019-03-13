@@ -2,19 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import NoteForm from './note_form';
-import { patchNote } from '../../util/notes_util';
+import { updateNote } from '../../actions/notes_actions';
 
 const mapStateToProps = (state) => {
   return {
-    // signedIn: state.session.isSignedIn,
-    // errors: state.errors.session,
-    formType: 'edit'
+    currentUser: state.session.user,
+    formType: 'Edit'
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (note) => dispatch(patchNote(note)),
+    processForm: (note) => dispatch(updateNote(note)),
     otherForm: (
       <button onClick={() => dispatch(openModal('new'))}>
         New
