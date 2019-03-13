@@ -17,6 +17,7 @@
 
 .note-index a {
   text-decoration: none;
+  // color: rgb(0, 189, 212);
   color: black;
 }
 
@@ -37,7 +38,8 @@
 .note-index-title:hover {
   background-color: #FFFFE3; 
   cursor: pointer;
-  border-bottom: 3px solid rgb(160, 137, 7);
+  // border-bottom: 3px solid rgb(160, 137, 7)
+  border-bottom: 3px solid #f08b00;;
 }
 
 .note-index-new {
@@ -52,7 +54,8 @@
 .note-index-new:hover {
   background-color: #FFFFE3; 
   cursor: pointer;
-  border-bottom: 3px solid rgb(160, 137, 7)
+  // border-bottom: 3px solid rgb(160, 137, 7)
+  border-bottom: 3px solid #f08b00;
 }
 
 .note-index-item {
@@ -79,7 +82,8 @@
 .note-index-item:focus {
   // border: 1px solid magenta;
   background-color: #FFFFE3;
-  border-left: 5px solid rgb(160, 137, 7);
+  // border-left: 5px solid rgb(160, 137, 7);
+  border-left: 5px solid #f08b00;
   outline: 0;
 }
 

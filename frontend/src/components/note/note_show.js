@@ -12,6 +12,7 @@ class NoteShow extends React.Component {
       noteAnswer: '',
       noteLastAnswered: '',
       showQuestion: true,
+      errors: [],
     }
 
     this.getData = this.getData.bind(this);
@@ -27,6 +28,8 @@ class NoteShow extends React.Component {
         noteQuestion: Object.values(this.props.currentNote[0].question),
         noteAnswer: Object.values(this.props.currentNote[0].answer),
         noteLastAnswered: Object.values(this.props.currentNote[0].lastAnswered),
+        errors: [],
+        showQuestion: true,
       })
     }
   }
@@ -40,7 +43,9 @@ class NoteShow extends React.Component {
         .then((response) => this.props.history.push(`/notes/`))
         .then(() => this.props.fetchNotes());
     } else {
-      console.log("You do not own this, you cannot delete it")
+      this.setState({
+        errors: ['Invalid permissions: You do not own this note, you cannot delete it.']
+      })
     }
   }
 
@@ -50,7 +55,9 @@ class NoteShow extends React.Component {
 
     if (this.props.currentUser.id === this.props.note.userId) {
     } else {
-      console.log("You do not own this, you cannot edit it")
+      this.setState({
+        errors: ['Invalid permissions: You do not own this note, you cannot edit it.']
+      })
     }
   }
 
@@ -74,12 +81,21 @@ class NoteShow extends React.Component {
     // console.log("DONE GETTING PROPS")
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        <li>
+          {this.state.errors[0]}
+        </li>
+      </ul>
+    );
+  }
+
   render() {
 
       return (
         <div onClick={this.getData} className="note-show">
           <section className="note-show-information">
-            {/* <div className={`note-show-question ${this.state.showQuestion ? '' : 'remove-element'}`}> */}
             {this.state.showQuestion ? (
               <div className={`note-show-question`}>
                 Q: {this.state.noteQuestion}
@@ -87,28 +103,20 @@ class NoteShow extends React.Component {
               <div className={`note-show-answer`}>
                 A: {this.state.noteAnswer}
             </div>)}<br></br>
-            {/* <div className={`note-show-answer ${this.state.showQuestion ? 'remove-element' : ''}`}>
-              A: {this.state.noteAnswer}<br></br>
-            </div><br></br> */}
-            {/* <div className="note-show-last-answered">
-              Last Answered: {this.state.noteLastAnswered}<br></br>
-            </div><br></br> */}
           </section>
           <section className="note-show-buttons">
-            <div onClick={this.handleEdit} className="note-show-edit">
+            {/* <div onClick={this.handleEdit} className="note-show-edit">
               Edit
-            </div>
+            </div> */}
             <div onClick={this.showAnswer} className="note-show-toggle">
               {this.state.showQuestion ? 'Answer' : 'Question'}
             </div>
             <div onClick={this.handleDelete} className="note-show-delete">
               Delete
             </div>
-            {/* <div>
-              <Link to="/notes">
-                NOTE INDEX
-              </Link>
-            </div> */}
+          </section>
+          <section className="note-show-errors">
+            {this.renderErrors()}
           </section>
         </div>
       )
