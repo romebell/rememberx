@@ -1,8 +1,6 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 
-
-
 const Greeting = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
