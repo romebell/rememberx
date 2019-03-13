@@ -10,7 +10,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <div className="logo-text" onClick={() => console.log(currentUser)}>REMEMBRRR</div>
       </div>
       <nav className="navbar-links">
-        <button className="signup-link link-hover" onClick={() => openModal('signup')}>SIGNUP</button>
+        <button className="signup-link link-hover" onClick={() => openModal('signup')}>SIGN UP</button>
         {/* &nbsp;or&nbsp; */}
         <button className="login-link link-hover" onClick={() => openModal('login')}>LOGIN</button>
       </nav>
