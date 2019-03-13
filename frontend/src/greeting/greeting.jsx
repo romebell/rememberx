@@ -1,4 +1,5 @@
 import React from 'react';
+import { isEmpty } from 'lodash';
 
 
 
@@ -12,7 +13,6 @@ const Greeting = ({ currentUser, logout, openModal }) => {
       </div>
       <nav className="navbar-links">
         <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
-        {/* &nbsp;or&nbsp; */}
         <button className="login-link" onClick={() => openModal('login')}>Login</button>
       </nav>
     </div>
@@ -27,7 +27,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   };
 
   return (
-    currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+    !isEmpty(currentUser) ? personalGreeting(currentUser, logout) : sessionLinks()
   )
 
 };

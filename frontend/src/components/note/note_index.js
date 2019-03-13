@@ -26,7 +26,6 @@ class NoteIndex extends React.Component {
     console.log("GETTING DATA")
     console.log(this.props)
     console.log("BREAK")
-    // console.log(Object.values(this.props.notes).length)
     const allNotes = Object.values(this.props.notes);
     let allNotesSorted = allNotes.sort(function(a, b){
       return new Date(b.lastAnswered) - new Date(a.lastAnswered);
@@ -75,9 +74,7 @@ class NoteIndex extends React.Component {
               <Link to="/notes/">
                 <div className="note-index-title">All</div>
               </Link>
-              {/* <Link to="/notes/new"> */}
-                <div className="note-index-new" onClick={() => this.props.openModal('new')}>New</div>
-              {/* </Link> */}
+              <div className="note-index-new" onClick={() => this.props.openModal('new')}>New</div>
             </section>
             <section>
               {allNotesSorted ? allNotesSorted.map(note => (

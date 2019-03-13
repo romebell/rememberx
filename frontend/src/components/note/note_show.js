@@ -108,9 +108,9 @@ class NoteShow extends React.Component {
           </section>
           <section className="note-show-buttons">
             {/* <div onClick={this.handleEdit} className="note-show-edit"> */}
-            <div onClick={() => this.props.openModal('edit')} className="note-show-edit">
+            {/* <div onClick={() => this.props.openModal('edit')} className="note-show-edit">
               Edit
-            </div>
+            </div> */}
             <div onClick={this.showAnswer} className="note-show-toggle">
               {this.state.showQuestion ? 'Answer' : 'Question'}
             </div>

@@ -56,7 +56,7 @@ class NoteForm extends React.Component {
     } else {
       this.props.processForm(note)
         // .then((response) => this.props.history.push(`/notes/${response.note.data._id}`))
-        .then((response) => this.props.history.push(`/notes/`))
+        .then(() => this.props.history.push(`/notes/`))
         .then(this.props.closeModal);
     }
   }
@@ -76,7 +76,6 @@ class NoteForm extends React.Component {
       <div onClick={this.getData}>
         <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
         {this.props.formType} Note
-        {/* <form onSubmit={this.handleSubmit}> */}
         <form onSubmit={this.handleSubmit}>
           <div>
               <input type="text"

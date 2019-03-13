@@ -7,10 +7,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // thisNote: state.entities.notes,
     notes: state.entities.notes,
     errors: state.errors.session,
-    // currentNote: state.entities.notes[ownProps.match.params.noteId],
     ownPropsNoteId: ownProps.match.params.noteId
   };
 };
