@@ -1,6 +1,8 @@
 .notes {
   display: flex;
   flex-wrap: wrap;
+  font-family: 'Roboto';
+
 }
 
 .note-index {
@@ -13,17 +15,22 @@
   border-bottom: 1px solid #DADCE0;
   margin-left: 15px;
   height: 100%;
+  font-family: 'Roboto';
+
 }
 
 .note-index a {
   text-decoration: none;
   // color: rgb(0, 189, 212);
   color: black;
+  font-family: 'Roboto';
 }
 
 .note-index-header {
   // text-align: center;
   border-bottom: 1px solid #DADCE0;
+  font-family: 'Roboto';
+
 }
 
 .note-index-title {
@@ -33,6 +40,7 @@
   border-bottom: 3px solid transparent;
   float: left;
   width: 30%;
+  font-family: 'Roboto';
 }
 
 .note-index-title:hover {
@@ -40,6 +48,8 @@
   cursor: pointer;
   // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;;
+  font-family: 'Roboto';
+
 }
 
 .note-index-new {
@@ -49,6 +59,7 @@
   width: 30%;
   border-right: 1px solid #DADCE0;
   border-bottom: 3px solid transparent;;
+  font-family: 'Roboto';
 }
 
 .note-index-new:hover {
@@ -56,6 +67,8 @@
   cursor: pointer;
   // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;
+  font-family: 'Roboto';
+
 }
 
 .note-index-item {
@@ -67,6 +80,8 @@
   border-left: 5px solid transparent;
   border-top: 1px solid transparent;
   text-decoration: none;
+  font-family: 'Roboto';
+
 }
 
 .note-index-item:active {
@@ -89,6 +104,7 @@
 
 .note-item-question {
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 .hide-element {
