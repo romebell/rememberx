@@ -5,13 +5,18 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
 const  Modal = ({modal, closeModal}) => {
+  const demoUser={username: 'Demo', email: 'demo@email.com', password: 'password'};
+  const nullUser={username: '', email: '', password: ''};
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
     case 'login':
-      component = <LoginFormContainer />;
+      component = <LoginFormContainer user={nullUser}/>;
+      break;
+    case 'demo':
+      component = <LoginFormContainer user={demoUser} />
       break;
     case 'signup':
       component = <SignupFormContainer />;

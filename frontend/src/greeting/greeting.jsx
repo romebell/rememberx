@@ -12,6 +12,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
       <nav className="navbar-links">
         <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
         <button className="login-link" onClick={() => openModal('login')}>Login</button>
+        <button className="demo-link" onClick={() => openModal('demo')}>Demo Login</button>
       </nav>
     </div>
   );

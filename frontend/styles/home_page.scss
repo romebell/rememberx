@@ -84,6 +84,20 @@ body {
 
             }
 
+
+            .demo-link {
+              border: none;
+              background: none;
+              font-family: 'Roboto';
+              font-size: 1em;
+              font-style: bold;
+              font-weight: 900;
+              color: rgb(0, 189, 212);
+              text-transform: uppercase;
+              cursor: pointer;
+
+          }
+
             .link-hover:hover {
                 cursor: pointer;
             }

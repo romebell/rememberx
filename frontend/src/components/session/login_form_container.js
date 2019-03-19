@@ -7,15 +7,10 @@ import LoginForm from './login_form';
 const mapStateToProps = (state) => {
   return {
     errors: state.errors.session,
-    formType: 'login'
+    formType: 'login',
+    otherFormType: 'signup',
   };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     login: user => dispatch(login(user))
-//   }
-// }
 
 const mapDispatchToProps = dispatch => {
   return {
