@@ -45,13 +45,22 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
-      email: '',
-      password: '',
+      email: this.props.user.email,
+      password: this.props.user.password,
       errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+    this.demoLoginHelper = this.demoLoginHelper.bind(this);
+  }
+  
+  componentDidMount() {
+    console.log(this.state.email)
+    if (this.state.email === 'demo@email.com') {
+      this.demoLogin();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,6 +69,40 @@ class LoginForm extends React.Component {
     }
 
     this.setState({errors: nextProps.errors})
+  }
+
+
+
+  demoLogin() {
+    const emailArray = this.state.email.split('');
+    const passwordArray = this.state.password.split('');
+    this.state.email = '';
+    this.state.password = '';
+    this.demoLoginHelper(emailArray, passwordArray);
+  }
+
+  demoLoginHelper(emailArray, passwordArray) {
+    if (emailArray.length > 0) {
+      this.setState({
+        email: this.state.email + emailArray.shift()
+      }, () => {
+        window.setTimeout(() =>
+          this.demoLoginHelper(emailArray, passwordArray), 100);
+        }
+      );
+    } else if (passwordArray.length > 0) {
+      this.setState({
+        password: this.state.password + passwordArray.shift()
+      }, () => {
+        window.setTimeout(() =>
+          this.demoLoginHelper(emailArray, passwordArray), 10);
+        }
+      );
+    } else {
+      this.props.processForm({username: 'Demo', email: 'demo@email.com', password: 'password'})
+        .then(this.props.closeModal)
+        .then(() => this.props.history.push('/notes'));
+    }
   }
 
   update(field) {

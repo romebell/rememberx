@@ -2,14 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 class NoteIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { note, monthNames } = this.props;
     return (
-      // <div className="note-index-item">
       <button className="note-index-item">
         <div className="note-item-question">
           {this.props.note.question}
@@ -24,7 +19,6 @@ class NoteIndexItem extends React.Component {
           Next Review: 
         </div>
       </button>
-      // </div>
     )
   }
 }

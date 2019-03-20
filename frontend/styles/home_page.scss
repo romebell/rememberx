@@ -11,7 +11,7 @@
 
 body {
     // background-color: lightgrey;
-    border: 1px dashed grey;
+    // border: 1px dashed grey;
 }
 
 .app {
@@ -24,7 +24,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 4fr 2fr;
         // background-color: pink;
-        border: 1px dashed blue;
+        // border: 1px dashed blue;
 
 
         .logo {
@@ -55,7 +55,7 @@ body {
             justify-content: space-around;
             grid-column-start: 3;
             grid-column-end: 4;
-            border: 1px dashed red;
+            // border: 1px dashed red;
             font-family: 'Roboto';
             font-style: bold;
 
@@ -68,6 +68,7 @@ body {
                 font-weight: 900;
                 color: rgb(0, 189, 212);
                 text-transform: uppercase;
+                cursor: pointer;
             }
 
             .login-link {
@@ -79,8 +80,23 @@ body {
                 font-weight: 900;
                 color: rgb(0, 189, 212);
                 text-transform: uppercase;
+                cursor: pointer;
 
             }
+
+
+            .demo-link {
+              border: none;
+              background: none;
+              font-family: 'Roboto';
+              font-size: 1em;
+              font-style: bold;
+              font-weight: 900;
+              color: rgb(0, 189, 212);
+              text-transform: uppercase;
+              cursor: pointer;
+
+          }
 
             .link-hover:hover {
                 cursor: pointer;
@@ -90,7 +106,7 @@ body {
 
     .main-page {
         display: grid;
-        border: 1px dashed green;
+        // border: 1px dashed green;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 5fr 1fr;
 
@@ -104,7 +120,7 @@ body {
 
 
             .main-page-description-one {
-                padding: 0 10px;
+                padding: 0 0px;
                 height: 30%;
                 display: flex;
                 justify-content: center;
@@ -116,12 +132,12 @@ body {
             }
 
             .main-page-description-two {
-                padding: 0px 30px;
+                padding: 0px 50px;
                 padding-bottom: 30px;
                 height: 50%;
                 display: flex;
                 align-items: center;
-                text-align: justify;
+                text-align: left;
                 font-size: 18px;
                 .highlight{
                     color:  #f08b00;
@@ -134,11 +150,16 @@ body {
                 margin: auto;
                 width: 30%;
                 height: 50px;
-                border-radius: 5px;
+                border-radius: 3px;
                 background-color: #f08b00;
                 color: white;
+                font-size: 0.9em;
+                cursor: pointer;
             }
-        
+
+            #main-page-get-started:hover {
+                background-color: #f08b00e3;
+            }
         }
 
         .main-page-image {

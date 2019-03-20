@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { networkInterfaces } from 'os';
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -10,6 +9,7 @@ class NoteForm extends React.Component {
       question: '',
       answer: '',
       collectionIds: [],
+      errors: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,16 +18,16 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
-    this.setState({ note: newState.notes[0] });
-    this.setState({errors: newState.errors});
+    // this.setState({ note: newState.notes[0] });
+    // this.setState({errors: newState.errors});
   }
 
   getData(e) {
-    console.log("GETTING DATA")
-    console.log(this.props)
-    console.log("BREAK")
-    console.log(this.props.currentUser)
-    console.log("DONE GETTING PROPS")
+    // console.log("GETTING DATA")
+    // console.log(this.props)
+    // console.log("BREAK")
+    // console.log(this.props.currentUser)
+    // console.log("DONE GETTING PROPS")
   }
 
   update(field) {
@@ -47,20 +47,24 @@ class NoteForm extends React.Component {
       userId: currentUser.id,
     };
 
-    console.log(note)
-
-    this.props.createNote(note)
-      .then((response) => this.props.history.push(`/notes/${response.note.data._id}`));
+    if (this.state.question === '' || this.state.answer === '') {
+      this.setState({
+        errors: ['No field can be left empty'],
+      })
+    } else {
+      this.props.processForm(note)
+        // .then((response) => this.props.history.push(`/notes/${response.note.data._id}`))
+        .then(() => this.props.history.push(`/notes/`))
+        .then(this.props.closeModal);
+    }
   }
 
   renderErrors() {
     return(
       <ul>
-        {/* {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))} */}
+        <li>
+          {this.state.errors[0]}
+        </li>
       </ul>
     );
   }
@@ -68,7 +72,8 @@ class NoteForm extends React.Component {
   render() {
     return (
       <div onClick={this.getData}>
-        NEW NOTE FORM
+        <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
+        {this.props.formType} Note
         <form onSubmit={this.handleSubmit}>
           <div>
               <input type="text"

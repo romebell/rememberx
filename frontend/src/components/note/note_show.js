@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Modal from '../modal/note_modal';
 
 class NoteShow extends React.Component {
   constructor(props) {
@@ -11,20 +11,26 @@ class NoteShow extends React.Component {
       noteQuestion: '',
       noteAnswer: '',
       noteLastAnswered: '',
+      showQuestion: true,
+      errors: [],
+      active: false,
     }
 
     this.getData = this.getData.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.showAnswer = this.showAnswer.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    if ( this.props.currentNote[0] != undefined && this.props.currentNote !== prevProps.currentNote ) {
+    if ( this.props.currentNote[0] !== undefined && this.props.currentNote !== prevProps.currentNote ) {
       this.setState({
         noteId: Object.values(this.props.currentNote[0]._id),
         noteQuestion: Object.values(this.props.currentNote[0].question),
         noteAnswer: Object.values(this.props.currentNote[0].answer),
         noteLastAnswered: Object.values(this.props.currentNote[0].lastAnswered),
+        errors: [],
+        showQuestion: true,
       })
     }
   }
@@ -38,7 +44,9 @@ class NoteShow extends React.Component {
         .then((response) => this.props.history.push(`/notes/`))
         .then(() => this.props.fetchNotes());
     } else {
-      console.log("You do not own this, you cannot delete it")
+      this.setState({
+        errors: ['Invalid permissions: You do not own this note, you cannot delete it.']
+      })
     }
   }
 
@@ -48,10 +56,23 @@ class NoteShow extends React.Component {
 
     if (this.props.currentUser.id === this.props.note.userId) {
     } else {
-      console.log("You do not own this, you cannot edit it")
+      this.setState({
+        errors: ['Invalid permissions: You do not own this note, you cannot edit it.']
+      })
     }
   }
 
+  showAnswer(e) {
+    if (this.state.showQuestion) {
+      this.setState({
+        showQuestion: false,
+      })
+    } else {
+      this.setState({
+        showQuestion: true,
+      })
+    }
+  }
 
   getData(e) {
     // console.log("GETTING DATA")
@@ -61,30 +82,45 @@ class NoteShow extends React.Component {
     // console.log("DONE GETTING PROPS")
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        <li>
+          {this.state.errors[0]}
+        </li>
+      </ul>
+    );
+  }
+
   render() {
 
       return (
         <div onClick={this.getData} className="note-show">
-        <div className="note-show-question">
-          Q: {this.state.noteQuestion}<br></br>
-        </div><br></br>
-        <div className="note-show-answer">
-          A: {this.state.noteAnswer}<br></br>
-        </div><br></br>
-        <div className="note-show-last-answered">
-          Last Answered: {this.state.noteLastAnswered}<br></br>
-        </div><br></br>
-          <div onClick={this.handleEdit}>
-            EDIT NOTE (NOT IMPLIMENTED DUE TO UPCOMING MODAL)
-          </div>
-          <div onClick={this.handleDelete}>
-            DELETE NOTE
-          </div>
-          <div>
-            <Link to="/notes">
-              NOTE INDEX
-            </Link>
-          </div>
+          <Modal />
+          <section className="note-show-information">
+            {this.state.showQuestion ? (
+              <div className={`note-show-question`}>
+                Q: {this.state.noteQuestion}
+              </div> ) : (
+              <div className={`note-show-answer`}>
+                A: {this.state.noteAnswer}
+            </div>)}<br></br>
+          </section>
+          <section className="note-show-buttons">
+            {/* <div onClick={this.handleEdit} className="note-show-edit"> */}
+            {/* <div onClick={() => this.props.openModal('edit')} className="note-show-edit">
+              Edit
+            </div> */}
+            <div onClick={this.showAnswer} className="note-show-toggle">
+              {this.state.showQuestion ? 'Answer' : 'Question'}
+            </div>
+            <div onClick={this.handleDelete} className="note-show-delete">
+              Delete
+            </div>
+          </section>
+          <section className="note-show-errors">
+            {this.renderErrors()}
+          </section>
         </div>
       )
     // }
