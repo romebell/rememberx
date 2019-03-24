@@ -16,11 +16,11 @@ The spaced repeition algorithm, founded by Dr Piotr Wozniak, will remind on a da
 Remembrrr Homepage
 ![picture](images/remembrrr_homepage.png)
 
-User login displays all of the notes that were made and a new button to where a user can add a note to their collection of notes.
+### User login displays all of the notes that were made and a new button to where a user can add a note to their collection of notes.
 
-![picture](images/user_login.mp4)
+![picture](images/remembrrr_login.gif)
 
-User create a note, view the question and answer side, and deleting the note.
+### User create a note, view the question and answer side, and deleting the note.
 
 ![picture](images/)
 
@@ -30,5 +30,5 @@ Employees and Managers can both record a call or a conversation
 + Implement the spaced repetition algoritmn to where it gives you a notification when you log in to view notes for that day.
 + Make the web app a chrome extension as well that users can download and install on their chrome browser to quickly review notes and see notifications.
 
-## Team Members
+## Team Members	
 Rome Bell, Kyle Fischer, Ahmed Ali
