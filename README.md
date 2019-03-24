@@ -13,6 +13,7 @@ The spaced repeition algorithm, founded by Dr Piotr Wozniak, will remind on a da
 `HTML5` / `SCSS` / `MongoDB` / `Express.js` / `React.js` / `Redux` / `Node.js` / `JavaScript`
 
 ## Features
+
 Remembrrr Homepage
 ![picture](images/remembrrr_homepage.png)
 
@@ -24,11 +25,10 @@ Remembrrr Homepage
 
 ![picture](images/add_new_note.gif)
 
-Employees and Managers can both record a call or a conversation
 
 ## Possible Future Implementations
 + Implement the spaced repetition algoritmn to where it gives you a notification when you log in to view notes for that day.
-+ Make the web app a chrome extension as well that users can download and install on their chrome browser to quickly review notes and see notifications.
++ Make the web app a chrome extension as well so that users can download and install the app on their chrome browser to quickly review notes and see notifications.
 
 ## Team Members	
 Rome Bell, Kyle Fischer, Ahmed Ali
