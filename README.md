@@ -18,11 +18,11 @@ Remembrrr Homepage
 
 ### User login displays all of the notes that were made and a new button to where a user can add a note to their collection of notes.
 
-![picture](images/remembrrr_login.gif)
+![picture](images/login.gif)
 
 ### User create a note, view the question and answer side, and deleting the note.
 
-![picture](images/)
+![picture](images/add_new_note.gif)
 
 Employees and Managers can both record a call or a conversation
 
