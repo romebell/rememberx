@@ -75,7 +75,7 @@ class NoteIndex extends React.Component {
               </Link>
               <div className="note-index-new" onClick={() => this.props.openModal('new')}>New</div>
             </section>
-            <section>
+            <section className="alternating-styling">
               {allNotesSorted ? allNotesSorted.map(note => (
                 <Link to={`/notes/${note._id}`}>
                   <NoteIndexItem key={note._id} note={note} monthNames={monthNames} />
