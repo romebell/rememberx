@@ -78,6 +78,8 @@ class LoginForm extends React.Component {
     const passwordArray = this.state.password.split('');
     this.state.email = '';
     this.state.password = '';
+    // this.setState({email: ''});
+    // this.setState({password: ''});
     this.demoLoginHelper(emailArray, passwordArray);
   }
 

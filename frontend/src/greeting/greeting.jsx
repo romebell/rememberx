@@ -18,10 +18,21 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   );
   const personalGreeting = () => {
     return (
-        <hgroup className="header-group" >
-        <h2 className="header-name">Hi, {currentUser.name}!</h2>
-        <button className="header-button" onClick={logout}>Log Out</button>
-      </hgroup>
+      <div className="notes-navbar">
+        <div className="notes-logo">
+          <div className="notes-logo-image"></div>
+          <div className="notes-logo-text">REMEMBRRR</div>
+        </div>
+        <nav className="notes-navbar-links">
+          <h2 className="header-name">Hi, {currentUser.name}!</h2>
+          <button className="header-button" onClick={logout}>Log Out</button>
+        </nav>
+      </div>
+
+      // <hgroup className="header-group" >
+      //   <h2 className="header-name">Hi, {currentUser.name}!</h2>
+      //   <button className="header-button" onClick={logout}>Log Out</button>
+      // </hgroup>
     )
   };
 

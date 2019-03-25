@@ -1,7 +1,73 @@
+.notes-navbar {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  background-color: #607D8B;
+}
+
+.notes-logo {
+  font-family: 'Varela';
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  color: #f08b00c4;
+  font-weight: 800;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+  align-items: center
+}
+
+.notes-logo-image {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/memory.png');
+  opacity: 0.6;
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  background-position: center
+}
+
+.notes-navbar-links {
+  display: flex;
+  justify-content: space-around;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  // border: 1px dashed red;
+  font-family: 'Roboto';
+  font-style: bold;
+}
+
+.header-name {
+  line-height: 45px;
+  font-family: 'Varela';
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  color: #f08b00c4;
+  font-weight: 800;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+  align-items: center
+}
+
+.header-button {
+  border: none;
+  background: none;
+  font-family: 'Roboto';
+  font-size: 1em;
+  font-style: bold;
+  font-weight: 900;
+  color: rgb(0, 189, 212);
+  text-transform: uppercase;
+  cursor: pointer
+}
+
 .notes {
   display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto';
+  background-color: #607D8B;
 
 }
 
@@ -9,10 +75,15 @@
   position: relative;
   left: 0;
   width: 30%;
-  background-color: white;
-  border-top: 1px solid #DADCE0;
-  border-right: 1px solid #DADCE0;
-  border-bottom: 1px solid #DADCE0;
+  // background-color: white;
+  background-color: #607D8B;
+  // border-top: 1px solid #DADCE0;
+  // border-right: 1px solid #DADCE0;
+  // border-bottom: 1px solid #DADCE0;
+  border-top: 1px solid #f08b00c4;
+  border-right: 1px solid #f08b00c4;
+  border-bottom: 1px solid #f08b00c4;
+  border-left: 1px solid #f08b00c4;
   margin-left: 15px;
   height: 100%;
   font-family: 'Roboto';
@@ -22,13 +93,17 @@
 .note-index a {
   text-decoration: none;
   // color: rgb(0, 189, 212);
-  color: black;
+  // color: black;
+  color: #FFDC00;
+  // color: #f08b00c4;
   font-family: 'Roboto';
 }
 
 .note-index-header {
   // text-align: center;
-  border-bottom: 1px solid #DADCE0;
+  // border-bottom: 1px solid #DADCE0;
+  border-bottom: 1px solid #f08b00c4;
+  color: #f08b00c4;
   font-family: 'Roboto';
 
 }
@@ -36,7 +111,9 @@
 .note-index-title {
   margin: 0 auto;
   text-align: center;
-  border-right: 1px solid #DADCE0;
+  // border-right: 1px solid #DADCE0;
+  border-right: 1px solid #f08b00c4;
+  // border-bottom: 1px solid #DADCE0;
   border-bottom: 3px solid transparent;
   float: left;
   width: 30%;
@@ -45,6 +122,7 @@
 
 .note-index-title:hover {
   background-color: #FFFFE3; 
+  color: black;
   cursor: pointer;
   // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;;
@@ -57,13 +135,16 @@
   display: inline-block;
   text-align: center;
   width: 30%;
-  border-right: 1px solid #DADCE0;
+  // border-right: 1px solid #DADCE0;
+  border-right: 1px solid #f08b00;
   border-bottom: 3px solid transparent;;
   font-family: 'Roboto';
+  color: #FFDC00;
 }
 
 .note-index-new:hover {
   background-color: #FFFFE3; 
+  color: black;
   cursor: pointer;
   // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;
@@ -74,15 +155,29 @@
 .note-index-item {
   padding-left: 15px;
   padding-top: 5px;
-  border-bottom: 1px solid #DADCE0;
+  // border-bottom: 1px solid #DADCE0;
+  border-bottom: 1px solid #f08b00;
+  color: #FFDC00;
+  background-color: #607D8B;
   cursor: pointer;
   width: 100%;
   border-left: 5px solid transparent;
+  border-right: 0px solid transparent;
   border-top: 1px solid transparent;
   text-decoration: none;
   font-family: 'Roboto';
-
 }
+
+.note-index-item:nth-child(2) {
+  background-color: magenta;
+}
+
+.alternating-styling:nth-child(1) {
+  // background-color: #37474F;
+  background-color: magenta;
+}
+
+.note-index-item
 
 .note-index-item:active {
   text-decoration: none;
@@ -92,6 +187,7 @@
   // border: 1px solid cyan;
   background-color: #FFFFE3;
   text-decoration: none;
+  color: black;
 }
 
 .note-index-item:focus {
