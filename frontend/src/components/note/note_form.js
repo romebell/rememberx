@@ -1,5 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
+
+const Input = styled.input`
+  padding: 1em;
+  margin: 0em;
+  color: black;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+`;
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  `;
+  
+  const SubmitButton = styled(Button)`
+  color: white;
+  background: #FFA725;
+  border-color: #FFA725;
+`;
+
+const ModalHeader = styled.header`
+  text-align: center;
+  padding: 0;
+  margin-bottom: 10px;
+`;
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -71,24 +103,27 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <div onClick={this.getData}>
+      <div onClick={this.getData} className="note-form">
         <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
-        {this.props.formType} Note
+        {/* <div className="note-modal-title">{this.props.formType} Note</div> */}
+        <ModalHeader>{this.props.formType} Note</ModalHeader><br></br>
         <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
+          <div className="note-modal">
+              <Input type="text"
                 value={this.state.question}
                 onChange={this.update('question')}
                 placeholder="Question"
               />
             <br/>
-              <input type="text"
+              <Input type="text"
                 value={this.state.answer}
                 onChange={this.update('answer')}
-                placeholder="answer"
+                placeholder="Answer"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <br></br>
+            {/* <input type="submit" value="Submit" /> */}
+            <SubmitButton>Submit</SubmitButton>
             {this.renderErrors()}
           </div>
         </form>
