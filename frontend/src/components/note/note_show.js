@@ -16,7 +16,6 @@ class NoteShow extends React.Component {
       active: false,
     }
 
-    this.getData = this.getData.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.showAnswer = this.showAnswer.bind(this);
@@ -74,14 +73,6 @@ class NoteShow extends React.Component {
     }
   }
 
-  getData(e) {
-    // console.log("GETTING DATA")
-    // console.log(this.props)
-    // console.log("BREAK")
-    // console.log(this.state)
-    // console.log("DONE GETTING PROPS")
-  }
-
   renderErrors() {
     return(
       <ul>
@@ -97,6 +88,7 @@ class NoteShow extends React.Component {
       return (
         <div onClick={this.getData} className="note-show">
           <Modal />
+
           <section className="note-show-information">
             {this.state.showQuestion ? (
               <div className={`note-show-question`}>
@@ -106,21 +98,23 @@ class NoteShow extends React.Component {
                 A: {this.state.noteAnswer}
             </div>)}<br></br>
           </section>
+
           <section className="note-show-buttons">
-            {/* <div onClick={this.handleEdit} className="note-show-edit"> */}
-            {/* <div onClick={() => this.props.openModal('edit')} className="note-show-edit">
-              Edit
-            </div> */}
             <div onClick={this.showAnswer} className="note-show-toggle">
               {this.state.showQuestion ? 'Answer' : 'Question'}
+            </div>
+            <div>
+              &nbsp;
             </div>
             <div onClick={this.handleDelete} className="note-show-delete">
               Delete
             </div>
           </section>
+
           <section className="note-show-errors">
             {this.renderErrors()}
           </section>
+
         </div>
       )
     // }

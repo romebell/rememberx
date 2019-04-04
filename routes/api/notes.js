@@ -48,11 +48,7 @@ router.delete('/:id',
     Note.findById(req.params.id)
       .then(note => {
         noteOwner = User.findById(note.userId);
-        // if (noteOwner.id === req.user.id) {
           note.remove().then(res.json(note));
-        // } else {
-        //   res.status(403).json({ incorrectPermission: "You cannot delete this note" })
-        // }
       })
     .catch(error =>
       res.status(404).json({ noNoteFound: "Note not found" }))
@@ -68,12 +64,7 @@ router.patch('/:id',
           userId: note.userId,
           id: req.params.id
         });
-        // noteOwner = User.findById(note.userId);
-        // if (noteOwner.id === req.user.id) {
           newNote.save();
-        // } else {
-        //   res.status(403).json({ incorrectPermission: "You cannot edit this note" })
-        // }
       })
     .catch(error =>
       res.status(404).json({ noNoteFound: "Note not found" }))

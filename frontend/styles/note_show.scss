@@ -14,11 +14,12 @@
 .note-show-information {
   width: 400px;
   padding: 20px;
+  margin-left: 50px;
 }
 
 .note-show-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: relative;
   width: 90%;
 }

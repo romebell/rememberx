@@ -13,9 +13,11 @@ class NoteIndex extends React.Component {
     this.state = {
       notes: null,
       active: false,
+      sortedNotes: null,
     }
 
     this.getData = this.getData.bind(this);
+    this.sortNotes = this.sortNotes.bind(this);
   }
 
   componentDidMount() {
@@ -23,15 +25,6 @@ class NoteIndex extends React.Component {
   }
 
   getData(e) {
-    // console.log("GETTING DATA")
-    // console.log(this.props)
-    // console.log("BREAK")
-    // const allNotes = Object.values(this.props.notes);
-    // let allNotesSorted = allNotes.sort(function(a, b){
-    //   return new Date(b.lastAnswered) - new Date(a.lastAnswered);
-    // });
-    // console.log(allNotesSorted)
-    // console.log("DONE GETTING PROPS")
   }
 
   componentDidUpdate(prevProps) {
@@ -40,6 +33,21 @@ class NoteIndex extends React.Component {
     }
   }
 
+  sortNotes(type) {
+    const allNotes = Object.values(this.props.notes);
+    if (type === "mine") {
+      let userNotes = allNotes.filter((note) => note.userId === this.props.currentUser.id);
+      let allNotesSorted = userNotes.sort(function(a, b){
+        return new Date(b.lastAnswered) - new Date(a.lastAnswered);
+      });
+      this.setState({sortedNotes: allNotesSorted});
+    } else if (type === 'all') {
+      let allNotesSorted = allNotes.sort(function(a, b){
+        return new Date(b.lastAnswered) - new Date(a.lastAnswered);
+      });
+      this.setState({sortedNotes: allNotesSorted});
+    }
+  }
 
   
   render() {
@@ -49,11 +57,12 @@ class NoteIndex extends React.Component {
 
   const allNotes = Object.values(this.props.notes);
   let currentNote = allNotes.filter((e) => e._id === this.props.match.params.noteId)
-  let allNotesSorted = allNotes.sort(function(a, b){
-    return new Date(b.lastAnswered) - new Date(a.lastAnswered);
-  });
+  if (this.state.sortedNotes === null) {
+    this.sortNotes('all');
+  }
 
     if (this.state.notes === []) {
+
       return (
         <div onClick={this.getData} className="note-index">
           There are no notes!
@@ -64,25 +73,31 @@ class NoteIndex extends React.Component {
           </Link>
         </div>
       )
+
     } else {
+
       return (
         <div className="notes">
           <Modal />
+
           <section onClick={this.getData} className="note-index">
+
             <section className="note-index-header">
-              <Link to="/notes/">
-                <div className="note-index-title">All</div>
-              </Link>
-              <div className="note-index-new" onClick={() => this.props.openModal('new')}>New</div>
+              <div className="note-index-title" onClick={() => this.sortNotes('all')}>All Notes</div>
+              <div className="note-index-mine" onClick={() => this.sortNotes('mine')}>My Notes</div>
+              <div className="note-index-new" onClick={() => this.props.openModal('new')}>New Note</div>
             </section>
+
             <section className="alternating-styling">
-              {allNotesSorted ? allNotesSorted.map(note => (
+              {this.state.sortedNotes ? this.state.sortedNotes.map(note => (
                 <Link to={`/notes/${note._id}`}>
                   <NoteIndexItem key={note._id} note={note} monthNames={monthNames} />
                 </Link>
               )) : ''}
             </section>
+
           </section>
+
           <section className={`${this.props.location.pathname.length < 10 ? 'hide-element' : ''}`}>
             <NoteShowContainer currentNote={currentNote} />
           </section>

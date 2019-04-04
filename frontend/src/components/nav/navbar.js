@@ -6,7 +6,6 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    this.getData = this.getData.bind(this);
   }
 
   logoutUser(e) {
@@ -14,13 +13,6 @@ class NavBar extends React.Component {
     this.props.logout();
   }
   
-  getData(e) {
-    // console.log("GETTING DATA")
-    // console.log(this.props)
-    // console.log("BREAK")
-    // console.log(this.getState())
-    // console.log("DONE GETTING PROPS")
-  }
 
   getLinks() {
     if (this.props.loggedIn) {

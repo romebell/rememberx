@@ -28,11 +28,6 @@ const Greeting = ({ currentUser, logout, openModal }) => {
           <button className="header-button" onClick={logout}>Log Out</button>
         </nav>
       </div>
-
-      // <hgroup className="header-group" >
-      //   <h2 className="header-name">Hi, {currentUser.name}!</h2>
-      //   <button className="header-button" onClick={logout}>Log Out</button>
-      // </hgroup>
     )
   };
 

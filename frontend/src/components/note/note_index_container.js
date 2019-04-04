@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     notes: state.entities.notes,
     errors: state.errors.session,
-    ownPropsNoteId: ownProps.match.params.noteId
+    ownPropsNoteId: ownProps.match.params.noteId,
+    currentUser: state.session.user
   };
 };
 
