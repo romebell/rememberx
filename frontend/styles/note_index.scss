@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
   background-color: #607D8B;
+  height: 65px;
 }
 
 .notes-logo {
@@ -32,7 +33,6 @@
   justify-content: space-around;
   grid-column-start: 3;
   grid-column-end: 4;
-  // border: 1px dashed red;
   font-family: 'Roboto';
   font-style: bold;
 }
@@ -68,18 +68,13 @@
   flex-wrap: wrap;
   font-family: 'Roboto';
   background-color: #607D8B;
+  padding-left: 25px;
 
 }
 
 .note-index {
-  position: relative;
-  left: 0;
   width: 30%;
-  // background-color: white;
   background-color: #607D8B;
-  // border-top: 1px solid #DADCE0;
-  // border-right: 1px solid #DADCE0;
-  // border-bottom: 1px solid #DADCE0;
   border-top: 1px solid #f08b00c4;
   border-right: 1px solid #f08b00c4;
   border-bottom: 1px solid #f08b00c4;
@@ -92,16 +87,11 @@
 
 .note-index a {
   text-decoration: none;
-  // color: rgb(0, 189, 212);
-  // color: black;
   color: #FFDC00;
-  // color: #f08b00c4;
   font-family: 'Roboto';
 }
 
 .note-index-header {
-  // text-align: center;
-  // border-bottom: 1px solid #DADCE0;
   border-bottom: 1px solid #f08b00c4;
   color: #f08b00c4;
   font-family: 'Roboto';
@@ -111,42 +101,57 @@
 .note-index-title {
   margin: 0 auto;
   text-align: center;
-  // border-right: 1px solid #DADCE0;
+  color: #FFDC00;
   border-right: 1px solid #f08b00c4;
-  // border-bottom: 1px solid #DADCE0;
   border-bottom: 3px solid transparent;
   float: left;
-  width: 30%;
+  width: 33%;
   font-family: 'Roboto';
+  box-sizing: border-box;
 }
 
 .note-index-title:hover {
   background-color: #FFFFE3; 
   color: black;
   cursor: pointer;
-  // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;;
   font-family: 'Roboto';
+}
 
+.note-index-mine {
+  margin: 0 auto;
+  text-align: center;
+  color: #FFDC00;
+  border-right: 1px solid #f08b00c4;
+  border-bottom: 3px solid transparent;
+  float: left;
+  width: 33%;
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+.note-index-mine:hover {
+  background-color: #FFFFE3; 
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid #f08b00;;
+  font-family: 'Roboto';
 }
 
 .note-index-new {
-  // margin: 0 auto;
   display: inline-block;
   text-align: center;
-  width: 30%;
-  // border-right: 1px solid #DADCE0;
-  border-right: 1px solid #f08b00;
+  width: 34%;
   border-bottom: 3px solid transparent;;
   font-family: 'Roboto';
   color: #FFDC00;
+  box-sizing: border-box;
 }
 
 .note-index-new:hover {
   background-color: #FFFFE3; 
   color: black;
   cursor: pointer;
-  // border-bottom: 3px solid rgb(160, 137, 7)
   border-bottom: 3px solid #f08b00;
   font-family: 'Roboto';
 
@@ -155,7 +160,6 @@
 .note-index-item {
   padding-left: 15px;
   padding-top: 5px;
-  // border-bottom: 1px solid #DADCE0;
   border-bottom: 1px solid #f08b00;
   color: #FFDC00;
   background-color: #607D8B;
@@ -168,32 +172,19 @@
   font-family: 'Roboto';
 }
 
-.note-index-item:nth-child(2) {
-  background-color: magenta;
-}
-
-.alternating-styling:nth-child(1) {
-  // background-color: #37474F;
-  background-color: magenta;
-}
-
-.note-index-item
-
 .note-index-item:active {
   text-decoration: none;
 }
 
 .note-index-item:hover {
-  // border: 1px solid cyan;
   background-color: #FFFFE3;
   text-decoration: none;
   color: black;
 }
 
 .note-index-item:focus {
-  // border: 1px solid magenta;
   background-color: #FFFFE3;
-  // border-left: 5px solid rgb(160, 137, 7);
+  color: black;
   border-left: 5px solid #f08b00;
   outline: 0;
 }

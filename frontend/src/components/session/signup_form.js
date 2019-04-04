@@ -79,7 +79,6 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    // this.props.processForm(user, this.props.history).then(this.props.closeModal); 
     this.props.processForm(user)
       .then(this.props.closeModal)
       .then(() => this.props.history.push('/notes'));    
@@ -104,32 +103,36 @@ class SignupForm extends React.Component {
           <LogForm>
             <br/>
             <ModalHeader>Sign up to Remembrrr</ModalHeader>
+              
               <Input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"
               />
             <br/>
+
               <Input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
             <br/>
+
               <Input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
             <br/>
+
               <Input type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
             <br/>
+
             <SubmitButton>Submit</SubmitButton>
-            {/* < type="submit" value="Submit" /> */}
             {this.renderErrors()}
           </LogForm>
         </form>

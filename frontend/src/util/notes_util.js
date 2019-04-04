@@ -19,7 +19,3 @@ export const patchNote = note => {
 export const deleteNote = (noteId) => {
   return axios.delete(`/api/notes/${noteId}`);
 }
-
-// export const login = (userData) => {
-//   return axios.post('/api/users/login', userData);
-// };

@@ -49,17 +49,7 @@ class NoteForm extends React.Component {
     this.getData = this.getData.bind(this);
   }
 
-  componentWillReceiveProps(newState) {
-    // this.setState({ note: newState.notes[0] });
-    // this.setState({errors: newState.errors});
-  }
-
   getData(e) {
-    // console.log("GETTING DATA")
-    // console.log(this.props)
-    // console.log("BREAK")
-    // console.log(this.props.currentUser)
-    // console.log("DONE GETTING PROPS")
   }
 
   update(field) {
@@ -85,7 +75,6 @@ class NoteForm extends React.Component {
       })
     } else {
       this.props.processForm(note)
-        // .then((response) => this.props.history.push(`/notes/${response.note.data._id}`))
         .then(() => this.props.history.push(`/notes/`))
         .then(this.props.closeModal);
     }
@@ -105,16 +94,18 @@ class NoteForm extends React.Component {
     return (
       <div onClick={this.getData} className="note-form">
         <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
-        {/* <div className="note-modal-title">{this.props.formType} Note</div> */}
         <ModalHeader>{this.props.formType} Note</ModalHeader><br></br>
+
         <form onSubmit={this.handleSubmit}>
           <div className="note-modal">
+
               <Input type="text"
                 value={this.state.question}
                 onChange={this.update('question')}
                 placeholder="Question"
               />
             <br/>
+
               <Input type="text"
                 value={this.state.answer}
                 onChange={this.update('answer')}
@@ -122,11 +113,12 @@ class NoteForm extends React.Component {
               />
             <br/>
             <br></br>
-            {/* <input type="submit" value="Submit" /> */}
+            
             <SubmitButton>Submit</SubmitButton>
             {this.renderErrors()}
           </div>
         </form>
+
       </div>
     );
   }

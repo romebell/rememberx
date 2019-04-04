@@ -78,8 +78,6 @@ class LoginForm extends React.Component {
     const passwordArray = this.state.password.split('');
     this.state.email = '';
     this.state.password = '';
-    // this.setState({email: ''});
-    // this.setState({password: ''});
     this.demoLoginHelper(emailArray, passwordArray);
   }
 
@@ -144,17 +142,21 @@ class LoginForm extends React.Component {
         <br />
         <form onSubmit={this.handleSubmit}>
           <LogForm>
+
           <ModalHeader>Sign into Remembrrr</ModalHeader>
+          
             <Input placeholder="Email" type="text"
               value={this.state.email}
               onChange={this.update('email')}
               />
             <br/>
+
             <Input placeholder="Password" type="password"
               value={this.state.password}
               onChange={this.update('password')}
             />
             <br/>
+
             <SubmitButton>Log In</SubmitButton>
             {this.renderErrors()}
           </LogForm>

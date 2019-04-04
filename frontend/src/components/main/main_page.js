@@ -18,9 +18,6 @@ class MainPage extends React.Component {
           <button id="main-page-get-started" onClick={() => this.props.openModal('signup')}>Get Started</button>
         </div>
         <div className="main-page-image"></div>
-        {/* <footer>
-          Footer Text
-        </footer> */}
       </div>
     );
   }
