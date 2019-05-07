@@ -3,18 +3,17 @@
   min-height: 200px;
   box-sizing: border-box;
   border: 5px solid #f08b00;
-  position: relative;
-  left: 0;
-  top: 200px;
   width: 500px;
+  justify-self: center;
+  align-self: flex-start;
+  margin-top: 100px;
   background-color: #FFFFE3; 
-
 }
 
 .note-show-information {
   width: 400px;
   padding: 20px;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .note-show-buttons {

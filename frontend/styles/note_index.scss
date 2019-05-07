@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
   background-color: #607D8B;
-  height: 65px;
 }
 
 .notes-logo {
@@ -68,8 +67,8 @@
   flex-wrap: wrap;
   font-family: 'Roboto';
   background-color: #607D8B;
-  padding-left: 25px;
-
+  padding-left: 15px;
+  position: relative;
 }
 
 .note-index {
@@ -79,7 +78,7 @@
   border-right: 1px solid #f08b00c4;
   border-bottom: 1px solid #f08b00c4;
   border-left: 1px solid #f08b00c4;
-  margin-left: 15px;
+  margin-right: 25px;
   height: 100%;
   font-family: 'Roboto';
 
