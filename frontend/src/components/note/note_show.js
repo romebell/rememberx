@@ -103,9 +103,9 @@ class NoteShow extends React.Component {
             <div onClick={this.showAnswer} className="note-show-toggle">
               {this.state.showQuestion ? 'Answer' : 'Question'}
             </div>
-            <div>
+            {/* <div>
               &nbsp;
-            </div>
+            </div> */}
             <div onClick={this.handleDelete} className="note-show-delete">
               Delete
             </div>

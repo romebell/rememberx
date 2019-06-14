@@ -2,12 +2,13 @@
   padding: 20px;
   min-height: 200px;
   box-sizing: border-box;
-  border: 5px solid #f08b00;
+  border: 1px solid #FFDC00;
+
   width: 500px;
   justify-self: center;
   align-self: flex-start;
   margin-top: 100px;
-  background-color: #FFFFE3; 
+  // background-color: #FFFFE3; 
 }
 
 .note-show-information {
@@ -16,24 +17,82 @@
   margin-left: 20px;
 }
 
+.note-show-question {
+  display: flex;
+  justify-content: center;
+}
+
 .note-show-buttons {
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  width: 90%;
+  // width: 90%;
 }
 
 .note-show-buttons div {
   cursor: pointer;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-bottom: 3px solid transparent;
+
+  padding: 5px 10px;
+  // border-bottom: 3px solid transparent;
+
+  border-radius: 3px;
+  box-sizing: border-box;
+  // background-color: #CF8732;
+  // color: white;
+
 }
 
-.note-show-buttons div:hover {
-  background-color: #FFFFE3; 
+.note-show-toggle {
+  color: white;
+  /* border: 1px solid white; */
+  background: #FDCC00;
+  // padding: 5px 10px;
+}
+
+.note-show-delete {
+  background: white;
+  border: 1px solid #FFDC00;
+  color: #FFDC00;
+}
+
+// .note-show-buttons {
+//   cursor: pointer;
+//   padding: 5px 10px;
+//   border-bottom: 3px solid transparent;
+//   border-radius: 3px;
+//   box-sizing: border-box;
+// }
+
+// .note-show-delete div {
+//   background: white;
+//   border: 1px solid #FFDC00;
+//   // background-color: ##FFDC00;
+
+// }
+
+.note-show-buttons:hover {
+  // background-color: #CF8732; 
+  // background-color: #FFFFE3; 
+  // background-color: red;
   cursor: pointer;
-  border-bottom: 3px solid blue;
+  // border: 2px solid white;
+  // border-bottom: 3px solid blue;
+  // .note-show-toggle {
+  //   background-color: #FFDC00;
+  //   color: white;
+    
+  // }
+}
+
+.note-show-toggle:hover {
+  background-color: #F49D00;
+  color: white;
+
+}
+
+.note-show-delete:hover {
+  background-color: #FFDC00;
+  color: white;
 }
 
 .remove-element {
@@ -42,7 +101,9 @@
 
 .note-show-errors {
   display: block;
+  margin-top: 10px;
   height: 20px;
+  font-size: 14px;
   width: 100%;
   text-align: center;
   color: rgb(172, 12, 12);
