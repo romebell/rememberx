@@ -1,7 +1,7 @@
 .notes-navbar {
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-  background-color: #FFDC00;
+  background-color: rgb(242, 151, 45);
 
   // background-color: #607D8B;
 }
@@ -11,7 +11,7 @@
   font-size: 1.5em;
   grid-column-start: 1;
   grid-column-end: 2;
-  color: #f08b00c4;
+  color: white;
   font-weight: 800;
   display: flex;
   justify-content: flex-start;
@@ -44,7 +44,9 @@
   font-size: 1.5em;
   grid-column-start: 1;
   grid-column-end: 2;
-  color: #f08b00c4;
+  color: white;
+
+  // color: #f08b00c4;
   font-weight: 800;
   display: flex;
   justify-content: flex-start;
@@ -59,7 +61,7 @@
   font-size: 1em;
   font-style: bold;
   font-weight: 900;
-  color: rgb(0, 189, 212);
+  color: white;
   text-transform: uppercase;
   cursor: pointer
 }
