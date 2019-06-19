@@ -81,11 +81,11 @@
   // background-color: #607D8B;
   background-color: white;
   // background-color: green;
-  border-top: 1px solid #f08b00c4;
-  border-right: 1px solid #f08b00c4;
-  border-bottom: 1px solid #f08b00c4;
-  border-left: 1px solid #f08b00c4;
-  margin-right: 25px;
+  // border-top: 1px solid #f08b00c4;
+  // border-right: 1px solid #f08b00c4;
+  // border-bottom: 1px solid #f08b00c4;
+  // border-left: 1px solid #f08b00c4;
+  margin-right: 20px;
   height: 100%;
   font-family: 'Roboto';
 
@@ -101,7 +101,8 @@
   border-bottom: 1px solid #f08b00c4;
   color: #f08b00c4;
   font-family: 'Roboto';
-
+  display: flex;
+  justify-content: center;
 }
 
 .note-index-title {
@@ -120,7 +121,7 @@
   background-color: #FFFFE3; 
   color: black;
   cursor: pointer;
-  border-bottom: 3px solid #f08b00;;
+  border-bottom: 3px solid #f08b00;
   font-family: 'Roboto';
 }
 
@@ -212,6 +213,15 @@
 .note-item-question {
   font-weight: bold;
   font-size: 1.2em;
+  padding: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #ccc;
+  
+}
+
+.note-item-last-answered {
+  padding-bottom: 5px;
+  padding-top: 3px;
 }
 
 .hide-element {
@@ -236,8 +246,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  display: flex;
-  flex-direction: column;
   align-content: space-around;
   padding: 0px 40px;
   font-family: 'Roboto';
@@ -245,5 +253,74 @@
   font-weight: 500;
 }
 
+.notes-tab {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  margin-left: 20px;
+  width: 285px;
+}
 
+// Notes Tab
 
+.note-index-title-2 {
+  margin: 0 auto;
+  text-align: center;
+  color: #FFDC00;
+  border-right: 1px solid #f08b00c4;
+  border-bottom: 3px solid transparent;
+  float: left;
+  width: 33%;
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+.note-index-title-2:hover {
+  background-color: #FFFFE3; 
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid #f08b00;
+  font-family: 'Roboto';
+}
+
+.note-index-mine-2 {
+  margin: 0 auto;
+  text-align: center;
+  color: #FFDC00;
+  border-right: 1px solid #f08b00c4;
+  border-bottom: 3px solid transparent;
+  float: left;
+  width: 33%;
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+.note-index-mine-2:hover {
+  background-color: #FFFFE3; 
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid #f08b00;;
+  font-family: 'Roboto';
+}
+
+.note-index-new-2 {
+  display: inline-block;
+  text-align: center;
+  width: 34%;
+  border-bottom: 3px solid transparent;;
+  font-family: 'Roboto';
+  color: #FFDC00;
+  box-sizing: border-box;
+}
+
+.note-index-new-2:hover {
+  background-color: #FFFFE3; 
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid #f08b00;
+  font-family: 'Roboto';
+
+}

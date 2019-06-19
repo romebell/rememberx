@@ -101,7 +101,20 @@ class NoteIndex extends React.Component {
           <section className={`${this.props.location.pathname.length < 10 ? 'hide-element' : ''}`}>
             <NoteShowContainer currentNote={currentNote} />
           </section>
+        
+          <div className="notes-tab">
+          
+            <section className="note-index-header">
+              <div className="note-index-title-2" onClick={() => this.sortNotes('all')}>All Notes</div>
+              <div className="note-index-mine-2" onClick={() => this.sortNotes('mine')}>My Notes</div>
+              <div className="note-index-new-2" onClick={() => this.props.openModal('new')}>New Note</div>
+            </section>
+
+          </div>
+        
         </div>
+
+        
       )
     }
   }
