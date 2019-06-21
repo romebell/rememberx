@@ -4,7 +4,7 @@ import { isEmpty } from 'lodash';
 const Greeting = ({ currentUser, logout, openModal }) => {
 
   const sessionLinks = () => (
-    <div className="navbar">
+    <div className="header">
       <div className="logo">
         <div className="logo-image"></div>
         <div className="logo-text">REMEMBRRR</div>
@@ -38,3 +38,5 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 };
 
 export default Greeting;
+
+// decide if you want the header to be the class or the navbar
