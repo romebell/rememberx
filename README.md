@@ -1,10 +1,10 @@
-# Remembrrr
+# RememberX
 
-[Live Link](https://remembrrr.herokuapp.com/#/)
+[Live Link](https://rememberx.herokuapp.com/#/)
 
 ## Background & Overview
 
-Remembrrr is a demo spaced repetition website that provides a user with a plateform to where they can create notes in the form of flashcards and be reminded to review those at a later time to avoid forgetting the material. With Remembrrr you will be able to never forget anything you want to remember.
+RememberX is a demo spaced repetition website that provides a user with a plateform to where they can create notes in the form of flashcards and be reminded to review those at a later time to avoid forgetting the material. With Rememberx you will be able to never forget anything you want to remember.
 
 The spaced repeition algorithm, founded by Dr Piotr Wozniak, will remind on a day right before your brain will forget the material to review it again.
 
@@ -14,8 +14,8 @@ The spaced repeition algorithm, founded by Dr Piotr Wozniak, will remind on a da
 
 ## Features
 
-Remembrrr Homepage
-![picture](images/remembrrr_homepage.png)
+RememberX Homepage
+![picture](images/rememberrr_homepage.png)
 
 ### User login displays all of the notes that were made and a new button to where a user can add a note to their collection of notes.
 

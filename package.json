@@ -1,5 +1,5 @@
 {
-  "name": "remembrrr",
+  "name": "rememberx",
   "version": "1.0.0",
   "description": "Space Repetition App",
   "main": "app.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "(git://github.com/romebell/remembrrr.git)"
+    "url": "(git://github.com/romebell/rememberx.git)"
   },
   "keywords": [
     "npm"

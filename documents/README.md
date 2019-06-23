@@ -1,12 +1,12 @@
-# Remembrrr
+# RememberX
 
-### Remembrrr
+### RememberX
 
 ## Background and Overview
 
-Remembrrr is a Web application with Chrome Extension that helps you remember things that you want to remember.
+RememberX is a Web application with Chrome Extension that helps you remember things that you want to remember.
 When the brain uses some piece of information actively it is always easy to recall. However, once you stop recalling it, it fades away until it is forgotten. Spaced repetition is a learning technique that lets learners review information at gradually increasing intervals.
-Remembrrr is an application based on this learning method.
+RememberX is an application based on this learning method.
 
 We will need to: 
   * Make a Chrome extension for viewing the notes and collections
