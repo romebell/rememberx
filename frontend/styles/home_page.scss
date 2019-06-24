@@ -9,9 +9,129 @@
   src: url('../fonts/VarelaRound-Regular.ttf');
 }
 
-body {
-    // background: orange;
+.header {
+    letter-spacing: -0.05rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #f08b00;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    height: 65px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
 }
+
+.logo {
+    font-family: 'Varela';
+    font-size: 1.5em;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    width: 40px;
+    background-image: url('../images/memory.png');
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+    background-position: center;
+}
+
+.logo-text, .notes-logo-text {
+    color: white;
+}
+
+.navbar-links {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-right: 25px;
+}
+
+.signup-link, .login-link, .demo-link {
+    background: #f08b00;
+    padding: 7.5px 25px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+    font-family: 'Roboto';
+    text-decoration: none;
+    vertical-align: middle;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.signup-link:active, .login-link:active, .demo-link:active {
+    border-top-color: #BF5175;
+    background: #BF5175;
+    color: white;
+}
+
+.signup-link:hover, .login-link:hover, .demo-link:hover {
+    border-top-color: white;
+    background: white;
+    color: #f08b00;
+}
+
+.main-page-description {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: auto auto;
+    width: 500px;
+}
+.main-page-description-one {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 48px;
+    padding-top: 10px;
+    margin-bottom: -20px;
+}
+
+.main-page-description-two {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#main-page-description-get-started {
+    display: flex;
+    justify-content: center;
+}
+
+
+// .notes-navbar {
+//     letter-spacing: -0.05rem;
+//     display: flex;
+//     justify-content: space-between;
+//     font-size: 1.25rem;
+//     font-weight: bold;
+//     background-color: #f08b00;
+//     border-bottom: 1px solid rgba(0,0,0,0.1);
+//     position: relative;
+//     top: 0;
+//     height: 65px;
+//     align-items: center;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     margin-bottom: 20px;
+// }
 
 // .app {
 //     height: 100vh;
@@ -176,85 +296,3 @@ body {
 //         }
 //     }
 // }
-.header {
-    letter-spacing: -0.05rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.25rem;
-    font-weight: bold;
-    // background-color: rgba(251,248,245,0.98);
-    background-color: #f08b00;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    position: relative;
-    top: 0;
-    height: 65px;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 20px;
-}
-
-.logo {
-    font-family: 'Varela';
-    font-size: 1.5em;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    // color: #f08b00c4;
-    color: white;
-    font-weight: 800;
-    display: flex;
-    justify-content: flex-start;
-    // margin-left: 10px;
-    align-items: center;
-
-}
-
-.logo-image {
-    height: 40px;
-    width: 40px;
-    background-image: url('../images/memory.png');
-    opacity: 0.6;
-    background-repeat: no-repeat;
-    background-size: auto 70%;
-    background-position: center;
-}
-
-.logo-text {
-    color: white;
-}
-
-.navbar-links {
-    // background: blue;
-    width: 250px;
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    margin-right: 25px;
-}
-
-.signup-link, .login-link, .demo-link {
-    background: #f08b00;
-    padding: 7.5px 25px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 5px;
-    margin-right: 10px;
-    font-weight: bold;
-    color: white;
-    font-size: 17px;
-    font-family: 'Roboto';
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-.signup-link:active, .login-link:active, .demo-link:active {
-    border-top-color: #BF5175;
-    background: #BF5175;
-    color: white;
-}
-
-.signup-link:hover, .login-link:hover, .demo-link:hover {
-    border-top-color: white;
-    background: white;
-    color: #f08b00;
-}
