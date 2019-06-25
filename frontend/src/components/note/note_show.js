@@ -92,10 +92,10 @@ class NoteShow extends React.Component {
           <section className="note-show-information">
             {this.state.showQuestion ? (
               <div className={`note-show-question`}>
-                Q: {this.state.noteQuestion}
+                 {this.state.noteQuestion}
               </div> ) : (
               <div className={`note-show-answer`}>
-                A: {this.state.noteAnswer}
+                 {this.state.noteAnswer}
             </div>)}<br></br>
           </section>
 

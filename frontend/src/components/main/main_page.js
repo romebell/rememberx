@@ -7,9 +7,13 @@ class MainPage extends React.Component {
         <div className="main-page-description">
             <div className="main-page-description-one">
               <p>
-                Enhance your <span className="highlight"> memory</span>
+                Enhance your <span className="highlight">memory</span>
               </p>
             </div>  
+            {/* <div className="picture"> */}
+              {/* <p>hello</p> */}
+            {/* <img src="../frontend/images/memory.png" /> */}
+            {/* </div> */}
             <div className="main-page-description-two">
               <p>
                 <span className="highlight">RememberX</span> is an application based on the spaced repetition learning technique. <br/><br/>Learners review information at gradually increasing intervals for enhanced memory

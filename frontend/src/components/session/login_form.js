@@ -76,7 +76,9 @@ class LoginForm extends React.Component {
   demoLogin() {
     const emailArray = this.state.email.split('');
     const passwordArray = this.state.password.split('');
-    this.state.email = '';
+    // this.setState({ email: ''});
+    // this.setState({ password: ''})
+    this.state.email = ''; // this.state.email //this.setState
     this.state.password = '';
     this.demoLoginHelper(emailArray, passwordArray);
   }
@@ -143,7 +145,7 @@ class LoginForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <LogForm>
 
-          <ModalHeader>Sign into Remembrrr</ModalHeader>
+          <ModalHeader>Sign into RememberX</ModalHeader>
           
             <Input placeholder="Email" type="text"
               value={this.state.email}

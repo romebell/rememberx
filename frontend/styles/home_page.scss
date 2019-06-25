@@ -137,6 +137,16 @@
     cursor: pointer;
 }
 
+#main-page-get-started:hover {
+    border-top-color: white;
+    background: white;
+    color: #f08b00;
+}
+
+.picture {
+    background-color: blue;
+    // background-image: url('../src/images/memory.png');
+}
 
 // .notes-navbar {
 //     letter-spacing: -0.05rem;

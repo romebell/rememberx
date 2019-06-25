@@ -7,7 +7,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     <div className="header">
       <div className="logo">
         <div className="logo-image"></div>
-        <div className="logo-text">REMEMBRRR</div>
+        <div className="logo-text">RememberX</div>
       </div>
       <nav className="navbar-links">
         <button className="signup-link" onClick={() => openModal('signup')}>Signup</button>
@@ -21,7 +21,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
       <div className="notes-navbar">
         <div className="notes-logo">
           <div className="notes-logo-image"></div>
-          <div className="notes-logo-text">REMEMBRRR</div>
+          <div className="notes-logo-text">RememberX</div>
         </div>
         <nav className="notes-navbar-links">
           <h2 className="header-name">Hi, {currentUser.name}!</h2>

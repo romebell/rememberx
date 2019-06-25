@@ -82,11 +82,11 @@ class NoteIndex extends React.Component {
 
           <section onClick={this.getData} className="note-index">
 
-            <section className="note-index-header">
+            {/* <section className="note-index-header">
               <div className="note-index-title" onClick={() => this.sortNotes('all')}>All Notes</div>
               <div className="note-index-mine" onClick={() => this.sortNotes('mine')}>My Notes</div>
               <div className="note-index-new" onClick={() => this.props.openModal('new')}>New Note</div>
-            </section>
+            </section> */}
 
             <section className="alternating-styling">
               {this.state.sortedNotes ? this.state.sortedNotes.map(note => (

@@ -29,8 +29,10 @@ const Button = styled.button`
 
 const ModalHeader = styled.header`
   text-align: center;
+  font-weight: bold;
   padding: 0;
   margin-bottom: 10px;
+  background: orange;
 `;
 
 const LogForm = styled.form`
@@ -102,7 +104,7 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <LogForm>
             <br/>
-            <ModalHeader>Sign up to Remembrrr</ModalHeader>
+            <ModalHeader>Sign up to RememberX</ModalHeader>
               
               <Input type="text"
                 value={this.state.username}

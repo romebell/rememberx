@@ -1,8 +1,9 @@
 .note-show {
   padding: 20px;
-  min-height: 200px;
+  min-height: 250px;
   box-sizing: border-box;
-  border: 1px solid #f2972d;
+  border: 2px solid #bf5175;
+  border-radius: 5px;
 
   width: 500px;
   justify-self: center;
@@ -13,8 +14,15 @@
 
 .note-show-information {
   width: 400px;
-  padding: 20px;
+  // padding: 20px;
   margin-left: 20px;
+  // margin: 0 atuo;
+  font-weight: bold;
+  font-family: 'Roboto';
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
 }
 
 .note-show-question {
@@ -45,15 +53,32 @@
 .note-show-toggle {
   color: white;
   /* border: 1px solid white; */
-  background: #FDCC00;
+  // background: #FDCC00;
+  background: #F49D00;
   // padding: 5px 10px;
 }
 
 .note-show-delete {
-  background: white;
-  border: 1px solid #FFDC00;
-  color: #FFDC00;
+  // background: white;
+  // border: 1px solid #FFDC00;
+  // color: #FFDC00;
+  background: #F49D00;
+  padding: 7.5px 25px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 17px;
+  font-family: 'Roboto';
+  text-decoration: none;
+  vertical-align: middle;
+  // text-transform: uppercase;
+  cursor: pointer;
 }
+
+
 
 // .note-show-buttons {
 //   cursor: pointer;
@@ -85,13 +110,16 @@
 }
 
 .note-show-toggle:hover {
-  background-color: #F49D00;
-  color: white;
+  // background-color: #F49D00;
+  background-color: white;
+  // color: white;
+  color: #F49D00;
+  border: 1px solid #F49D00;
 
 }
 
 .note-show-delete:hover {
-  background-color: #FFDC00;
+  background-color: #bf5175;
   color: white;
 }
 
