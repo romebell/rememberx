@@ -102,6 +102,7 @@
     font-size: 48px;
     padding-top: 10px;
     margin-bottom: -20px;
+    margin-left: -30px;
 }
 
 .main-page-description-two {
@@ -113,6 +114,27 @@
 #main-page-description-get-started {
     display: flex;
     justify-content: center;
+}
+
+.highlight {
+    color: #f08b00;
+}
+
+#main-page-get-started {
+    background: #f08b00;
+    padding: 12.5px 25px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+    font-family: 'Roboto';
+    text-decoration: none;
+    vertical-align: middle;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 
