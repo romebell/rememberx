@@ -138,14 +138,21 @@
 }
 
 #main-page-get-started:hover {
-    border-top-color: white;
+    // border-top-color: white;
     background: white;
     color: #f08b00;
+    border: 1px solid #f08b00;
 }
 
 .picture {
     background-color: blue;
     // background-image: url('../src/images/memory.png');
+}
+
+.home-logo {
+    margin: 25px 60px;
+    width: 300px;
+    height: 300px;
 }
 
 // .notes-navbar {

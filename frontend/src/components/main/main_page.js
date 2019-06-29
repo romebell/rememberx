@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../images/memory.png';
 
 class MainPage extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class MainPage extends React.Component {
                 Enhance your <span className="highlight">memory</span>
               </p>
             </div>  
+            <img src={logo} className="home-logo" alt="Logo" />
             {/* <div className="picture"> */}
               {/* <p>hello</p> */}
             {/* <img src="../frontend/images/memory.png" /> */}
